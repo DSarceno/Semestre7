@@ -1,0 +1,63 @@
+\section{Probabilidad}
+\subsection{Probabilidad Clásica}
+
+\begin{equation}
+	P(A) = \frac{\abs{A}}{\abs{\Omega}} \label{prob_clasica}
+\end{equation}
+
+¿Qué problemas tiene la probabilidad  clásica?
+
+La definición conocida de probabilidad clásica puede aplicarse cuando:
+\begin{itemize}
+	\item El espacio meustral es finito.
+	\item Todos los elementos del espacio muestral tienen el mismo peso.
+\end{itemize}
+
+\paragraph{Propiedades de la Probabilidad Clásica}
+
+\begin{itemize}
+	\item $P(\Omega) = 1$.
+	\item $P(A) \geq 0$ para cualquier evento $A$.
+	\item $P(A\cup B) = P(A) + P(B)$ si $A$ y $B$ son disjuntos.
+\end{itemize}
+
+\subsection{Probabilidad Geométrica}
+
+Si un experimento aleatorio tiene como espacio muestral $\Omega \subset \R ^2$ cuya área está bien definida y es finita, entonces se define la probabilidad geométrica de un evento $A \subseteq \Omega$ como
+\begin{equation}
+	P(A) = \frac{\text{Área de } A}{\text{Área de } \Omega} \label{prob_geometrica}	
+\end{equation}
+
+
+\paragraph{Propiedades de la Probabilidad Geométrica}
+
+\begin{itemize}
+	\item $P(\Omega) = 1$.
+	\item $P(A) \geq 0$ para cualquier evento $A$.
+	\item $P(A\cup B) = P(A) + P(B)$ si $A$ y $B$ son disjuntos.
+\end{itemize}
+
+\subsection{Probabilidad Frecuentista}
+
+Sea $n_A$ el número de ocurrencias de un evento $A$ en $n$ realizaciones de un experimento aleatorio. La probabilidad frecuentista del evento $A$ se define como el límite
+\begin{equation}
+	P(A) = \lim _{n\to \infty} \frac{n_A}{n} \label{prob_frecuentista}
+\end{equation}
+
+En estadística, a diferencia del análisis matemático, el infinito no tiene sentido; por lo que utilizar el límite es un abuso de notación. Para efectos prácticos se tomará el concepto de "infinito" como una cantidad grande en repeticiones del experimento.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
