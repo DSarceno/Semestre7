@@ -46,16 +46,41 @@ Sea $n_A$ el número de ocurrencias de un evento $A$ en $n$ realizaciones de un 
 
 En estadística, a diferencia del análisis matemático, el infinito no tiene sentido; por lo que utilizar el límite es un abuso de notación. Para efectos prácticos se tomará el concepto de "infinito" como una cantidad grande en repeticiones del experimento.
 
+\subsection{Espacios de Probabilidad}
+
+\begin{definicion}
+	Un espacio de probabilidad es una terna $(\Omega , \mathscr{F}, P)$, donde $\Omega$ es un conjunto arbitrario, $\mathscr{F}$ es una $\sigma -$álgebra de subconjuntos de $\Omega$, y $P$ es una medida de probabilidad sobre $\mathscr{F}$.
+\end{definicion}
+
+Para entender de mejor manera esta definición, es necesario introducir otros conceptos antes, tomaremos a $\mathscr{F}$ como una colección se subconjuntos de $\Omega$.
+
+\begin{definicion}
+	{\scshape{Medida de Probabilidad.}} Una función $P$ definida sobre una $\sigma -$álgebra $\mathscr{F}$ y con valores en el interbalo $[0,1]$ es una \textit{medida de probabilidad} si $P(\Omega) = 1$ y es $\sigma -$aditiva, es decir, si cumple que
+	$$P\qty( \bigcup _{n=1} ^\infty A_n) = \sum _{n=1} ^\infty P(A_n),$$
+	cuando $A_1, A_2, \ldots $ son elementos de $\mathscr{F}$ que cumplen con la condición de ser ajenos dos a dos, esto es, $A_i \cap A_j \neq \emptyset$ para valores de $i$ y $j$ distintos.
+\end{definicion}
+
+\begin{definicion}
+	{\scshape{Sigma Álgebra.}} Una colección de $\mathscr{F}$ de subonjuntos de $\Omega$ es una $\sigma -$álgebra si
+	\begin{enumerate}[a)]
+		\item $\emptyset \in \mathscr{F}$.
+		\item $\Omega \in \mathscr{F}$.
+		\item Si $A \in \mathscr{F}$ entonces $A^c \in \mathscr{F}$.
+		\item Si $A_1 ,A_2,\ldots \in \mathscr{F}$ entonces
+			$$\bigcup _{n=1} ^\infty A_n \in \mathscr{F}.$$
+	\end{enumerate}
+\end{definicion}
 
 
+\begin{ejemplo} \it
+	\begin{enumerate}
+		\item $\mathscr{F} = \{ \emptyset ,\Omega \}$. \\
+			La primera y segunda condición se cumplen. El tercer axioma, dado que tomamos el conjunto universo como $\Omega$, entonces los complementos pertenecen a la $\sigma -$álgebra. El cuarto axioma también se cumple. Entonces $\mathscr{F}$ es una $\sigma -$álgebra.
+		\item $\mathscr{F} = \{ \emptyset ,\Omega , A,A^c \}$.
+	\end{enumerate}
+\end{ejemplo}
 
-
-
-
-
-
-
-
+Haciendo la analogía, $\Omega$ es el espacio muestral, $\mathscr{F}$ son los eventos.
 
 
 
