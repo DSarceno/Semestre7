@@ -1,0 +1,26 @@
+\section{Tema 1 (Espacios Vectoriales)}
+
+Un espacio vectorial $V$ es un conjunto de elementos llamados vectores, caracterizado por los siguientes axiomas 
+	\begin{enumerate}
+		\item Cerraduras:
+		\begin{description}
+			\item[Respecto a la Suma: ] Para cualesquiera $u,v \in V$ se cumple que $u+v \in V$.
+			\item[Respecto al Producto Escalar: ] Dado $v\in V$ y $\lambda \in \F$ se cumple que $\lambda v \in V$.
+		\end{description}
+		\item Conmutatividad: Para cualesquiera $u,v,w \in V$ se tiene que $u + v = v + u$.
+		\item Asociatividad: $u + (v + w) = (u + v) + w$ y $a(bv) = (ab)v$ para todo $u,v,w \in V$, $a,b \in \F$.
+		\item Identidad Aditiva:  Existe un elemento $\vb{0}\in V$ tal que $v + \vb{0} = v$ para todo $v\in V$.
+		\item Identidad Multiplicativa: Existe un elemento $1 \in \F$ tal que $1v = v$ para todo $v \in V$.
+		\item Inverso Aditivo: Para cada $v\in V$ existe un único $w\in V$ tal que $v + w = \vb{0}$.
+		\item Distributividad: $a(u + v) = au + av$ y $(a + b)v = av + bv$ para todo $a,b \in \F$ y todo $u,v \in V$.
+	\end{enumerate}
+
+\section{Tema 2 (Transformaciones Lineales No$-$Singulares)}
+
+Sean $A$ y $B$ dos matrices no$-$singulares de dimensión $n\times n$, se tiene 
+	$$(AB)(B^{-1} A^{-1}) = $$
+por asociatividad
+	$$ = A(BB^{-1})A^{-1} = A\underbrace{(BB^{-1})}_{I_n} A^{-1} = AI_n A^{-1},$$
+dado que $AI_n = A$, entonces
+	$$ = AA^{-1} = I_n \quad \Rightarrow \quad (AB)^{-1} = (B^{-1} A^{-1}).$$
+$\hfill \square$
