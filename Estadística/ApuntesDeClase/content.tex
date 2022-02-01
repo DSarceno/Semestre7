@@ -83,6 +83,24 @@ Para entender de mejor manera esta definición, es necesario introducir otros co
 Haciendo la analogía, $\Omega$ es el espacio muestral, $\mathscr{F}$ son los eventos.
 
 
+\begin{teorema}
+	Si $A$ y $B\in \mathscr{F}$ y $\mathscr{F}$ es $\sigma -$álgebra entonces $A\cap B \in \mathscr{F}$.
+\end{teorema}
+
+\begin{proof}
+	Tomando $(A\cap B)^c$, por leyes de DeMorgan, $= A^c \cup B^c$, lo que concluye la prueba.
+\end{proof}
+
+¿La intersección infinita de conjuntos está en la $\sigma -$álgebra?
+\begin{teorema}
+	Si $S$ es una colección de subconjuntos de $\Omega$ y cada uno de los elementos de $S$ pertenecen a una $\sigma -$álgebra $\mathscr{F}$, entonces la intersección de todos los elementos de $S$ pertenece a $\mathscr{F}$.
+\end{teorema}
+
+\begin{proof}
+	Para el caso contable, se utiliza la idea de la demostración anterior, apliandola por inducción.
+\end{proof}
 
 
-
+\begin{definicion}
+	Sea $S$ una colección de subconjuntos de $\Omega$, entonces la $\sigma -$álgebra generada por $S$ es la menor $\sigma -$álgebra que contiene a $S$.
+\end{definicion}
