@@ -5,7 +5,7 @@ Una base de datos es una colección organizada de datos que puede ser ordenada y
 
 \begin{description}
 	\item[Acceso: ] Gran cantidad de datos pueden ser leídos y modificados por multiples usuarios; además, la estructura de datos es extendible y modificable.
-	\item[Integrity: ] Para asegurar la integridad de una base de datos, cada cambio o modificación se debe atener a las reglas \textit{ACID}:
+	\item[Integridad: ] Para asegurar la integridad de una base de datos, cada cambio o modificación se debe atener a las reglas \textit{ACID}:
 	\begin{description}
 		\item[Automaticidad: ] Si al estar cambiando algo de la DB falla, toda la operación fallará y la DB se mantendrá sin ninguna modificación.
 		\item[Consistencia: ] Antes de concretar un cambio en la DB, debe pasar un proceso de validación.
@@ -17,7 +17,23 @@ Una base de datos es una colección organizada de datos que puede ser ordenada y
 
 Así como en gran cantidad de herramientas, la forma de organización de la información es importante, el "Cómo?" está organizada la información en una base de datos, determina que tipo de base de datos es. Lo que se estudiará en estas páginas, estará relacionado con las bases de datos relacionales\footnote{Los tipos de bases de datos se pueden encontrar \href{https://www.tutorialspoint.com/Types-of-databases}{aquí}.}.
 
-\paragraph{Bases de Datos Relacionales}
+\paragraph{Bases de Datos Relacionales}\footnote{Se estará utilizando la base de datos relacional \textit{SQLite}.}
 
 Una base de datos relacional organiza la información en tablas relacionadas, las cuales llevarán registros que serán registrados en distintos campos, segun la base de datos requiera.
+\vspace{0.5cm}
+\begin{definicion}
+	Una \textbf{tabla} es una colección ordenada de datos. Cuyas divisiones son conocidas como \textit{campos} (representado por las columnas en la tabla).
+\end{definicion}
+
+\vspace{0.5cm}
+\begin{definicion}
+	Un \textbf{registro} (representado por las filas en la tabla) contiene datos que se relacionan con cada campo.
+\end{definicion}
+
+En cada uno de los campos que se tengan en una tabla, así como en programación en \textit{C} o FORTRAN, es necesario definir que tipo de datos se almacenarán (entero, texto, fecha, booleano o real).
+
+\paragraph{Agregar Información a una Base de Datos}
+
+Para añadir información a una tabla, se busca la casilla \textit{"New Record"} y se rellenan los campos mostrados, respetando al tipo de dato permitido en cada uno de los campos y recordando en el campo del \textit{id} debe ir una representación única del registro.
+
 
