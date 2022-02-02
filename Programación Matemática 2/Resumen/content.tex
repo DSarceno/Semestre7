@@ -1,6 +1,23 @@
 % SEMANA 1
 \section{Semana 1}
-% SEMANA 2
-\section{Semana 2}
-%SEMANA 3
-\section{Semana 3}
+
+Una base de datos es una colección organizada de datos que puede ser ordenada y alamacenada de manera sencilla. Debido a todo esto, es una herramienta indispensable hoy en día para el funcionamiento de cualquier página web, app, etc. Tres de las ventajas más notables de utilizar una base de datos es el acceso, integridad y seguridad.
+
+\begin{description}
+	\item[Acceso: ] Gran cantidad de datos pueden ser leídos y modificados por multiples usuarios; además, la estructura de datos es extendible y modificable.
+	\item[Integrity: ] Para asegurar la integridad de una base de datos, cada cambio o modificación se debe atener a las reglas \textit{ACID}:
+	\begin{description}
+		\item[Automaticidad: ] Si al estar cambiando algo de la DB falla, toda la operación fallará y la DB se mantendrá sin ninguna modificación.
+		\item[Consistencia: ] Antes de concretar un cambio en la DB, debe pasar un proceso de validación.
+		\item[Aislamiento: ] Las DB aceptan varios cambios al mismo tiempo, pero cada uno completamente independiente del otro.
+		\item[Durabilidad: ] Una vez se realize un cambio la DB es segura.
+	\end{description}
+	\item[Seguridad: ] La información en una DB puede ser segmentada y restringida para solo lectura, solo escritura o simplemente hacer información visible/invisible para ciertos usuarios.
+\end{description}
+
+Así como en gran cantidad de herramientas, la forma de organización de la información es importante, el "Cómo?" está organizada la información en una base de datos, determina que tipo de base de datos es. Lo que se estudiará en estas páginas, estará relacionado con las bases de datos relacionales\footnote{Los tipos de bases de datos se pueden encontrar \href{https://www.tutorialspoint.com/Types-of-databases}{aquí}.}.
+
+\paragraph{Bases de Datos Relacionales}
+
+Una base de datos relacional organiza la información en tablas relacionadas, las cuales llevarán registros que serán registrados en distintos campos, segun la base de datos requiera.
+
