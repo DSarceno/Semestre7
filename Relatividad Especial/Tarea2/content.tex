@@ -1,0 +1,12 @@
+\section{Tema 1: Propiedades del Grupo Lineal General GL$(3,\R)$}
+El grupo lineal general de grado $n$ es un conjunto de matrices no singulares de $n\times n$, el grupo definido con la multiplicación clásica de matrices. Este grupo es llamado lineal puesto que las columnas y filas de la matriz son linealmente independientes entre sí. Además, es necesario especificar que tipo de objetos estarán en las matrices, lo interesante de esto es que dicho objeto no tiene porque ser un campo, puede ser también un anillo, incluso un espacio vectorial.
+
+\section{Tema 2: Características de las Matrices Congruentes}
+Las matrices congruentes se definen de la siguiente forma: Tendiendo $A,B$ matrices de orden $n$, se dice que son congruentes si existe una matriz regular invertible $P$, a la que llamaremos matriz de paso, tal que 
+	$$A = P^T B P$$
+Dado que la congruencia implica equivalencia de matrices\footnote{Dos matrices $A,B$ se dicen semejantes cuando se puede llegar de una a otra por medio de un número finito de operaciones fila.} por lo que tienen el mismo rango. Las matrices congruentes forman una clase de equivalencia, esto se puede ver con las siguientes propiedades:
+\begin{description}
+	\item[Transitiva: ] Dada la matriz identidad $I_n$, entonces $A = I^T AI$. $A$ es congruente con sigo misma.
+	\item[Simétrica: ] Sea $A$ congruente con $B$ con matriz de paso $P$, entonces $B$ es congruente con $A$ con matriz de paso $P^{-1}$, lo cual es posible dada la hipótesis de $P$.
+	\item[Transitiva: ] Dadas $A,B,C$, con $A$ congruente con $B$ con matriz de paso $P$ y $B$ congruente con $C$ con matriz de paso $Q$, entonces $C$ es congruente con $A$ con matriz de paso $QP$, dado que $P^T Q^T = (QP)^T$.
+\end{description}

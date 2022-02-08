@@ -135,10 +135,32 @@ Las $\sigma -$álgebra son subconjuntos de las álgebras.
 \end{definicion}
 
 
+\begin{definicion}
+	{\scshape $\sigma -$Álgebra generada: } Sea $\mathscr{C}$ una colección no vacía de subconjuntos de $\Omega$. La $\sigma -$álgebra generada por $\mathscr{C}$, denotada por $\sigma (\mathscr{C})$
+	\dsnote{falta.}
+\end{definicion}
 
+\begin{definicion}
+	{\scshape $\sigma -$Álgebra de Borel de $\R$: } 
+	$$\mathscr{B} (\R) := \sigma \{ (a,b) \subseteq \R:a\leq b \}$$
+\end{definicion}
 
+\begin{definicion}
+	Sea $A \in \mathscr{B}$. La $\sigma -$álgebra de Borel de $A$, denotada por $\mathscr{B} (A)$ \dsnote{faltaaaaaaaa} o por $A\cap \mathscr{B} (\R)$, se define como sigue
+		$$\mathscr{B} (A) = \{ A\cap B \}$$
+\end{definicion}
 
+\begin{definicion}
+	{\scshape Límite superior e inferior: } Para una sucesión de eventos $A_n : n\in \N$, se define el límite superior y el límite inferior como sigue:
+	 	$$\limsup _{n\to \infty} A_n = \bigcap _{n=1} ^\infty \bigcup _{k=1} ^\infty A_k$$
+	 	$$\liminf _{n\to \infty} A_n = \bigcup _{n=1} ^\infty \bigcap _{k=1} ^\infty A_k$$
+\end{definicion}
 
+\begin{definicion}
+	Sea $\{ A_n : n\in \N \}$ una sucesión de eventos. Si existe un evento $A$ tal que
+		$$\liminf A_n = \limsup A_n = A$$
+	entonces se dice que la sucesión converge al evento $A$.
+\end{definicion}
 
 
 

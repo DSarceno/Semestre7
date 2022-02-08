@@ -7,7 +7,7 @@ Una base de datos es una colección organizada de datos que puede ser ordenada y
 	\item[Acceso: ] Gran cantidad de datos pueden ser leídos y modificados por multiples usuarios; además, la estructura de datos es extendible y modificable.
 	\item[Integridad: ] Para asegurar la integridad de una base de datos, cada cambio o modificación se debe atener a las reglas \textit{ACID}:
 	\begin{description}
-		\item[Automaticidad: ] Si al estar cambiando algo de la DB falla, toda la operación fallará y la DB se mantendrá sin ninguna modificación.
+		\item[Automaticidad: ] Si al estar cambiasubndo algo de la DB falla, toda la operación fallará y la DB se mantendrá sin ninguna modificación.
 		\item[Consistencia: ] Antes de concretar un cambio en la DB, debe pasar un proceso de validación.
 		\item[Aislamiento: ] Las DB aceptan varios cambios al mismo tiempo, pero cada uno completamente independiente del otro.
 		\item[Durabilidad: ] Una vez se realize un cambio la DB es segura.
@@ -35,5 +35,60 @@ En cada uno de los campos que se tengan en una tabla, así como en programación
 \paragraph{Agregar Información a una Base de Datos}
 
 Para añadir información a una tabla, se busca la casilla \textit{"New Record"} y se rellenan los campos mostrados, respetando al tipo de dato permitido en cada uno de los campos y recordando en el campo del \textit{id} debe ir una representación única del registro.
+
+
+
+\subsection{Diferecia entre las Bases de Datos y Hojas de Cálculo}
+
+Tomando todo lo visto anteriormente, es normal notar una gran similitud entre las bases de datos y las hojas de cálculo, la posibilidad de editar datos en tiempo real y de que múltiples usuarios tengan acceso a cierta información. Sin embargo existen diferencias significativas, una de ellas es bastante clara, la integridad de la información. En una hoja de cálculo no es necesario determinar el tipo de dato se almacena en cierta celda; además, el hecho de que varios usuarios pueden editar la hoja de cálculo en tiempo real sin procesos de validación, lo que hace que modificaciones se puedan sobreponer y causar errores en el programa.
+
+Escogiendo herramientas apropiadas:
+\begin{multicols}{2}
+	\paragraph{Hojas de Cálculo: }
+	\begin{enumerate}
+		\item Cálculos
+		\item Gráficos y herramientas de presentación
+		\item Estadística
+	\end{enumerate}
+	\columnbreak
+	\paragraph{Bases de Datos: }
+	\begin{enumerate}
+		\item Varios usuarios
+		\item Selección, filtrado y ordenamiento de datos
+		\item Creación de busquedas complejas con multiples condiciones
+		\item Manejo de gran cantidad de datos
+	\end{enumerate}
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
