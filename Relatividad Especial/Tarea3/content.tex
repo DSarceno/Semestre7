@@ -1,0 +1,14 @@
+\section{Tema 1: Matrices Isométricas}
+
+\textit{Demostrar que $A^T = A^{-1}$ se cumple para la siguiente matriz}
+	$$A = \mqty(a_1 & a_2 \\ a_2 & a_4).$$
+
+Esto es claro invocando el teorema espectral para espacios con producto interno sobre los reales. El teorema espectral enuncia que para un operador lineal $T$, los siguientes argumentos son equivalentes
+
+	\begin{enumerate}
+		\item $T$ es hermítico. (En un espacio sobre los reales es equivalente a ser simétrico)
+		\item El espacio tiene una base ortonormal formada por vectores propios de $T$.
+		\item $T$ tiene una matriz diagonal respecto a alguna base ortonormal del espacio.
+	\end{enumerate}
+	
+Sin embargo, es necesaria una condicion extra, el determinante de la matriz debe ser $\pm 1$. Dado todo esto, es claro que la matriz es una isometría, y todo lo que ello conyeva, es decir, $A^\dagger = A^{-1}$.
