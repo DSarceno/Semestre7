@@ -1,0 +1,44 @@
+
+
+\section{Postulados de la Mecánica Cuántica}
+
+\paragraph{Postulado 1:} Es estado de cualquier sistema físico está específicado por un vector de estado $\ket{\psi (t)}$ en un espacio $\Hilbert$. $\ket{\psi (t)}$ contiene toda la información necesaria del sistema. Cualquier superposición de vectores de estado, es un vector de estado.
+
+\paragraph{Postulado 2: } Para cada cantidad física medible $A$, llamada una variable dinámica u observable, le corresponde un operador hermítico lineal $\hat{A}$ cuyos vectores propios forman una base completa.
+
+\paragraph{Postulado 3: } La medida de un observable $A$ puede ser representado, formalmente, como la acción de $\hat{A}$ sobre un vector de estado $\ket{\psi (t)}$.  El único resultado posible de dicha medida es uno de los valores propios del operador $\hat{A}$. Si el resultado de una medida de $A$ en un estado $\ket{\psi (t)}$ es $a_n$, el estado del sistema inmediatamente despues de la medición cambia a $\ket{\psi _n}$:
+	$$\hat{A} \ket{\psi (t)} = a_n \ket{\psi _n}$$
+donde $a_n = \braket{\psi _n}{\psi (t)}$.
+
+\paragraph{Postulado 4: } 
+
+\subparagraph{Espectro Discreto: } Cuando se mide un observable $A$ de un sistema con estado $\ket{\psi}$, la probabilidad de obtener uno de los valores propios no degenerados $a_n$ de correspondiente operador $\hat{A}$ esta dado por
+	$$P_n (a_n) = \frac{\abs{\braket{\psi _n}{\psi}}^2}{\braket{\psi}} = \frac{\abs{a_n}}{\braket{\psi}},$$
+donde $\ket{\psi _n}$ es el estado propio de $\hat{A}$ con valor propio $a_n$. Si el valor propio $a_n$ es $m-$degenerado, $P_n$ se convierte
+	$$P_n (a_n) = \frac{\displaystyle\sum _{j=1} ^{m} \abs{\braket{\psi _n ^j}{\psi}}^2}{\braket{\psi}} = \frac{\displaystyle\sum _{j=1} ^{m} \abs{a_n ^{(j)}}^2}{\braket{\psi}}.$$
+La acción de medir cambia el estado del sistema de $\ket{\psi}$ a $\ket{\psi _n}$. Si el sistema está ya en un estado propio $\ket{\psi _n}$ de $\hat{A}$, la medida de $A$ produce con certeza el valor propio correspondiente: $\hat{A} \ket{\psi _n} = a_n \ket{\psi _n}$.
+
+\subparagraph{Espectro Continuo: } La relacion vista anteriormente puede ser extendida para determinar la densidad de probabilidad en la que una medida de $\hat{A}$ produce un valor entre $a$ y $a+\dd{a}$ en un sistema con estado inicial $\ket{\psi}$:
+	$$
+		\dv{P(a)}{a} = \frac{\abs{\psi (a)}^2}{\braket{\psi}} = \frac{\abs{\psi (a)}^2}{\displaystyle\int _{-\infty} ^\infty \abs{\psi (a^\prime)}^2 \dd{a^\prime}}.
+	$$
+
+\paragraph{Postulado 5: } La evolución temporal del vector de estado $\ket{\psi (t)}$ de un sistema es governada por la ecuación de Schrödinger dependiente del tiempo (a diferencia de los otros cuatro postulados, los cuales solo describen el sistema en cierto tiempo, este describe como el sistema evoluciona en el tiempo.)
+	$$
+		i\hbar \pdv{\ket{\psi (t)}}{t} = \hat{H} \ket{\psi (t)},	
+	$$
+donde $\hat{H}$ es el operador hamiltoniano, el cual corresponde a la energía total del sistema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%
