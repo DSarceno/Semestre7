@@ -84,6 +84,7 @@
 
 \frame{
 	\frametitle{$N$ Acepta toda cadena de $A_1 A_2$}
+	Tomamos una cadena $w = x_1 \cdot x_n y_1 \cdots y_m$, se tiene que la parte $x_1 \cdots x_n$ es reconocida por $N_1$ y $y_1 \cdots y_m$ reconocido por $N_2$. Como no se agregaron estados extras a los de $N_1$ y $N_2$ y $Q$ son todos los estados de $Q_1$ y $Q_2$, entonces las dos sucesiones existentes $r_0 ^1 ,\ldots ,r_n ^1 \in Q_1$ y $r_0 ^2 ,\ldots ,r_m ^2 \in Q_2$ son elementos respectivos de la sucesión $R_0 ,\ldots , R_{m+n+1} \in Q$. Lo único que se redefine es la función de transición únicamente por las $\varepsilon -$transiciones agregadas; por lo que, se cumple que el nuevo automata reconozca las cadenas de $A_1 A_2$, entonces el lenguaje es regular.
 }
 
 \frame{
@@ -130,6 +131,30 @@
 		
 }
 
+\frame{
+	\frametitle{$N$ Acepta toda candena de $A^*$}
+	\onslide<1->{ Para esto tenemos dos casos }
+	\begin{enumerate}
+		\item \onslide<2->{ Se tiene únicamente la cadena vacía $\varepsilon$, la cual es claramente aceptada, por construcción. }
+		\item \onslide<3->{ Tomando la cadena $w = w_1 \cdots w_m$, $w_j$ reconocido por $N_1$ y $w_j = x_1 \cdots x_{n_j}$ donde $n_j$ nos sirve para distinguir cadenas de distinta longitud. } \\
+		
+		\onslide<4->{ Tomaremos el caso base $m = 1$, el cual se cumple por construcción de los $w_j$, entonces suponiendo que funciona para $m = k$, se tiene que la cadena $w = w_1 \cdots w_k$ es reconocida por $N$. } \\
+		\onslide<5->{ Lo que implica que existe una sucesión de estados $R_0 ,\ldots ,R_n \in Q$, con $n = \displaystyle\sum _{j} ^{k} n_j$. } \\
+		
+	\end{enumerate}
+}
+
+\frame{
+	\frametitle{$N$ Acepta toda candena de $A^*$}
+	\onslide<1->{ Ahora tomando la cadena $w^{\prime} = w_1 \cdots w_k w_{k+1}$, se tiene que la máquina $N$ reconoce toda la subcadena $w_1 \cdots w_k$ y al momento de llegar al estado $R_n$ y consumir una $\varepsilon -$transición se tiene que $R_{n+1} \in \delta (R_n ,\varepsilon)$, y se llega al estado base. } \\[0.5cm]
+	\onslide<2->{ Por lo que, la cadena $w^{\prime}$ es reconocida por $N$. Concluyendo la prueba. }
+}
+
+\frame{
+	\centering
+	\vspace{1cm}
+	GRACIAS POR SU ATENCIÓN $<3$
+}
 
 
 
