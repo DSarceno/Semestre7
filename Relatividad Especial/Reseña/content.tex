@@ -1,0 +1,34 @@
+Reseña del caítulo $1.7$ del libro de Tsamparlis.
+
+\section{Tema 1}
+
+La idea de esta sección es encontrar la transfomración del Lorentz de una manera algebraica. Esto inicia dada la ecuación
+	\begin{equation}
+		\eta = L^t \eta L, \label{EcuacionMatricial}
+	\end{equation}
+donde $\eta = \text{diag} (-1,1,1,1)$. Se supone una matriz arbitraria de bloques en el espacio cartesiano lorentziano
+	\begin{equation}
+		L = \mqty(D & A \\ B & A) \label{MatrizBloques}
+	\end{equation}
+con $D$ una matriz $1\cp 1$, $B$ un vector columna, $C$ un vector fila y $A$ una matriz $3\cp 3$. Sustituyendo esta trasformación en \eqref{EcuacionMatricial} se llega a un sistema de ecuaciónes matricial; el cual, para resolverse, es necesario dividirse en casos.
+	\begin{equation}
+		\mqty{A^t A - C^t C = I_3 \\ B^t A - DC = 0 \\ B^t B - D^2 = -1} \label{SistemaMatricial}
+	\end{equation}
+\begin{description}
+	\item[Caso 1: ] $C = 0$ y $A \neq 0$, lo que nos deja que $A^t A = I_3$, $B = 0$ y $D = \pm 1$. Con esto se construyen las transformaciones
+		\begin{equation}
+			R_+ (E) = \mqty(1 & 0 \\ 0 & E) \quad \quad \quad R_- (E) = \mqty(-1 & 0 \\ 0 & E), \label{EOT}
+		\end{equation}
+		las cuales son trasformaciones euclideanas ortogonales, las cuales cumplen con las siguientes relaciones:
+			\begin{equation}
+				\left\{\begin{array}{c}
+					\text{det} R_\pm (E) = \pm 1 \\
+					R_+ ^t (E) R_+ (E) = R_- (E) ^t R_- (E) = I_4 \\
+					R_+ (E) ^t R_- (E) = \eta
+				\end{array}\right. \label{EOTRelaciones}
+			\end{equation}
+	\item[Caso 2: ] Para este caso se define $A = \text{diag} (K,1,1), \abs{K} \geq 1$, $B^t = (B_1 ,B_2 ,B_3)$, $C = (C_1 ,C_2 ,C_3)$; dado esto, y tomando \eqref{SistemaMatricial} implica que:
+	\begin{equation}
+		\left\{ \mqty{C_1 = \pm \sqrt{K^2 - 1}, \, C_2 = C_3 = 0 \\ B_1 = \pm \frac{D}{K} \sqrt{K^2 -1}, \, B_2 = B_3 = 0 \\ D = \pm \abs{K}} \right. \label{ConclusionesCaso2}
+	\end{equation}
+\end{description}
