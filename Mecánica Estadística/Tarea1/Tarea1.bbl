@@ -1,14 +1,16 @@
 \begin{thebibliography}{}
 
-\bibitem[Einstein, 1905]{einstein}
-Einstein, A. (1905).
-\newblock {Zur Elektrodynamik bewegter K{\"o}rper}. ({German}) [{On} the
-  electrodynamics of moving bodies].
-\newblock {\em Annalen der Physik}, 322(10):891--921.
+\bibitem[wik, ]{wiki}
+Wikipedia.
 
-\bibitem[Goossens et~al., 1993]{latexcompanion}
-Goossens, M., Mittelbach, F., and Samarin, A. (1993).
-\newblock {\em The \LaTeX\ Companion}.
-\newblock Addison-Wesley, Reading, Massachusetts.
+\bibitem[Blundell and Blundell, 2006]{blundell}
+Blundell, S.~J. and Blundell, K.~M. (2006).
+\newblock {\em Concepts in Thermal Physics}.
+\newblock Department of Physics, University of Oxford, UK.
+
+\bibitem[Freund, 2014]{freund}
+Freund, J.~E. (2014).
+\newblock {\em Mathematical Statistics with Applications}.
+\newblock Pearson.
 
 \end{thebibliography}

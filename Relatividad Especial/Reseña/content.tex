@@ -29,6 +29,71 @@ con $D$ una matriz $1\cp 1$, $B$ un vector columna, $C$ un vector fila y $A$ una
 			\end{equation}
 	\item[Caso 2: ] Para este caso se define $A = \text{diag} (K,1,1), \abs{K} \geq 1$, $B^t = (B_1 ,B_2 ,B_3)$, $C = (C_1 ,C_2 ,C_3)$; dado esto, y tomando \eqref{SistemaMatricial} implica que:
 	\begin{equation}
-		\left\{ \mqty{C_1 = \pm \sqrt{K^2 - 1}, \, C_2 = C_3 = 0 \\ B_1 = \pm \frac{D}{K} \sqrt{K^2 -1}, \, B_2 = B_3 = 0 \\ D = \pm \abs{K}} \right. \label{ConclusionesCaso2}
+		\left\{ \mqty{C_1 = \pm \sqrt{K^2 - 1}, \, C_2 = C_3 = 0 \\ B_1 = \pm \frac{D}{K} \sqrt{K^2 -1}, \, B_2 = B_3 = 0 \\ D = \pm \abs{K}} \right. . \label{ConclusionesCaso2}
 	\end{equation}
+	Esto define las siguientes transformaciones de Lorentz
+	\begin{align*}
+		L_1 = \mqty( K & C_1 & 0 & 0 \\ C_1 & K & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 ), &\quad L_2 = \mqty( -K & -C_1 & 0 & 0 \\ C_1 & K & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 ), \\ 
+		L_3 = \mqty( K & C_1 & 0 & 0 \\ -C_1 & K & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 ), &\quad L_4 = \mqty( -K & -C_1 & 0 & 0 \\ -C_1 & K & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 ).
+	\end{align*}
+	Las soluciones especiales son llamadas \textit{boosts}.
+	\item[Solución General: ] Para esto se definió $\beta$ como $B = -D\beta$, dado esto y utilizando el sistema \eqref{SistemaMatricial}, dado esto $\beta$ debe cumplir que $0 < \beta ^2 < 1$. Realizando un poco de algebra matricial se concluye que 
+	\begin{align*}
+		\left\{\begin{array}{c}
+			A = \pm \qty(I + \frac{D - 1}{\beta ^2} \beta \beta ^t) E, \\
+			B = \mp D\beta , \\
+			C = \mp D\beta ^t ,
+		\end{array}\right.
+	\end{align*}
+	con $E$ una matriz euclideana ortogonal, entonces se concluye la transformación general de Lorentz
+		\begin{equation}
+			L(\beta ,E) = L(\beta) R(E), \label{TransGeneral}
+		\end{equation}
+	donde la matriz $R(E)$ es la solución del caso $1$. 
+		\begin{equation}
+			L(\beta) = \mqty( \pm \gamma & \mp \gamma \beta ^t \\ \mp \gamma \beta & \pm \qty(\delta ^\mu _\nu + \frac{\text{det} L(\gamma - 1)}{\beta ^2} \beta \beta ^t) ) .
+		\end{equation}
+		Con $D = \pm \gamma$ y $\gamma = \frac{1}{\sqrt{1-\beta ^2}}$. Si se toman todos los casos de las matrices euclideanas ortogonales se tendrían $8$ casos en total. Y, nos interesan cuatro casos
+		\begin{enumerate}[a)]
+			\item Trans. propia de Lorentz ($D = \gamma$):
+				\begin{equation}
+					L_{+\uparrow} (\beta) = \mqty( \gamma & -\gamma \beta ^t \\ -\gamma \beta & I + \frac{\gamma - 1}{\beta ^2} \beta \beta ^t )
+				\end{equation}
+			\item Trans. de Lorentz con inversión espacial ($D = \gamma$):
+				\begin{equation}
+					L_{-\downarrow} (\beta) = \mqty( \gamma & \gamma \beta ^t \\ -\gamma \beta & -I - \frac{\gamma - 1}{\beta ^2} \beta \beta ^t )
+				\end{equation}
+			\item Trans. de Lorentz con inversión temporal ($D = -\gamma$):
+				\begin{equation}
+					L_{-\uparrow} (\beta) = \mqty( -\gamma & \gamma \beta ^t \\ \gamma \beta & I - \frac{\gamma - 1}{\beta ^2} \beta \beta ^t )
+				\end{equation}
+			\item Trans. de Lorentz con inversión espacio-temporal ($D = -\gamma$):
+				\begin{equation}
+					L_{+\downarrow} (\beta) = \mqty( -\gamma & -\gamma \beta ^t \\ \gamma \beta & -I - \frac{\gamma - 1}{\beta ^2} \beta \beta ^t )
+				\end{equation}
+		\end{enumerate}
 \end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%
