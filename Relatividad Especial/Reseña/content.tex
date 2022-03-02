@@ -1,4 +1,4 @@
-Reseña del caítulo $1.7$ del libro de Tsamparlis.
+Reseña y solución de los ejercicios de la sección $1.7$ del libro de Tsamparlis.
 
 \section{Tema 1}
 
@@ -73,6 +73,115 @@ con $D$ una matriz $1\cp 1$, $B$ un vector columna, $C$ un vector fila y $A$ una
 				\end{equation}
 		\end{enumerate}
 \end{description}
+
+Las cuatro transformaciones mostradas nos son útiles en física, pero nos ineteresarán más las transformaciones propias de Lorentz ya que forman un grupo. Un subgrupo de estas transformaciones es el llamado \textbf{boosts} formado por las matrices $L_{+\uparrow ,i} (\beta)$ donde $i$ es el eje. Bajo esta idea, se llega a las transformaciones propias de lorentz, construídas por esta ecuación matricial
+	\begin{equation}
+		\mqty(t^\prime \\ \vb{r}^\prime) = L(\beta) \mqty(t \\ \vb{r}) \label{properTrans}
+	\end{equation}
+
+\section{Ejercicios}
+
+\subsection{1.7.1}
+Demostramos las cuatro identidades mostradas:
+\begin{enumerate}
+	\item $\gamma ^2 = \gamma ^2 \beta ^2 + 1$, tomamos el lado derecho de la ecuación y desarrollamos con el denominador
+	$$\gamma ^2 \beta ^2 + 1 = \frac{\beta ^2}{1 - \beta ^2} + 1 = \frac{\beta ^2 + 1 - \beta ^2}{1 - \beta ^2} = \frac{1}{1 + \beta ^2} = \gamma ^2 .$$
+	$\hfill \square$
+	\item $\gamma \qty(\displaystyle\frac{\beta _1 \pm \beta _2}{1 \pm \beta _1 \beta _2}) = \gamma (\beta _1) \gamma (\beta _2) \qty(1 \pm \beta _1 \beta _2)$, tomando el lado izquierdo de la ecuación, para simplicidad y facilidad en la escritura, utilizamos directamente el $1-$ el término valuado:	
+	$$
+			1-\qty(\frac{\beta _1 \pm \beta _2}{1\pm \beta _1 \beta _2}) = \frac{1\pm 2\beta _1 \beta _2 + (\beta _1 \beta _2)^2 - \qty(\beta _1 ^2 \pm 2\beta _1 \beta _2 + \beta _2 ^2)}{\qty(1 \pm \beta _1 \beta _2)^2} = \frac{(1 - \beta _1 ^2)(1 - \beta _2 ^2)}{\qty(1 \pm \beta _1 \beta _2)^2},
+	$$
+	sustituyendo esto en la definición de $\gamma$ se tiene 
+	$$
+		\frac{1 \pm \beta _1 \beta _2}{\sqrt{1 - \beta _1 ^2}} \frac{1}{\sqrt{1 - \beta _2 ^2}} = \gamma (\beta _1) \gamma (\beta _2) \qty(1 \pm \beta _1 \beta _2).
+	$$
+	$\hfill \square$
+	\item $\dd{\gamma} = \gamma ^3 \beta \dd{\beta}$, utilizando la regla de la cadena
+	$$
+		\dd{\gamma} = \frac{-1}{2} \gamma ^3 (-2\beta \dd{\beta}) = \gamma ^3 \beta \dd{\beta} .
+	$$
+	$\hfill \square$
+	\item $\dd{(\gamma \beta)} = \gamma ^3 \dd{\beta}$, nuevamente, por la regla de la cadena
+	$$
+		\dd{(\gamma \beta)}	= \qty(\beta ^2 \gamma ^3 + \gamma) \dd{\beta} = \gamma ^3 \dd{\beta}.
+	$$
+	$\hfill \square$
+	\item Este inciso es claro, es la serie de Taylor alrededor de $\beta = 0$, de ahí
+	$$
+		\gamma = 1 + \frac{1}{2} \beta ^2 + \frac{3}{8} \beta ^4 + \cdots	
+	$$
+	$\hfill \square$
+\end{enumerate}
+
+
+\subsection{1.7.2}
+Tomando la transformación dada y valuandola en $-\beta$, se tiene
+	$$
+		L^{i'} _j (-\beta) L^{i'} _j (\beta) = \mqty(\dmat[0]{\gamma ^2 - \beta ^2 \gamma ^2, \gamma ^2 - \beta ^2 \gamma ^2, 1, 1}),
+	$$
+	donde, por el ejercicio anterior, $\gamma ^2 - \beta ^2 \beta ^2 = 1$, lo que nos da la identidad, entonces $L ^{i'} _j (-\beta) = \qty(L ^{i'} _j (\beta))^{-1}$. Para demostrar que es una transformación de Lorentz, utilizamos $\eta = L^t \eta L$, realizando la multiplicación con mathematica, se llega a la matriz anterior, con la salvedad de que el primer término es $-1$, lo cual es $\eta$, por lo que si es una transformación de Lorentz. \\
+Para el último inciso, dado que $\sinh{\phi} = \beta \gamma$ y $\cosh{\phi} = \gamma$, entonces es claro, por definición, que 
+	$$\tanh{\phi} = \frac{\sinh{\phi}}{\cosh{\phi}} = \beta .$$
+También, por definición de funciones trigonométricas hiperbólicas se suman dichas funciónes, con lo que se tiene
+	$$\sinh{\phi} + \cosh{\phi} = \beta \gamma + \gamma = \frac{e^\phi - e^{-\phi}}{2} + \frac{e^\phi + e^{-\phi}}{2} = e^\phi ,$$
+	Reduciendo la expresión $\gamma *(1 + \beta) = \sqrt{\frac{1 + \beta}{(1 + \beta)(1 - \beta)}} = \sqrt{\frac{1 + \beta}{1 - \beta}} \hfill \square$
+	
+\subsection{1.7.3}
+Tomando las matrices dadas en el ejemplo anterior, se tiene
+\begin{align*}
+	[L] &= \left(
+	\begin{array}{cccc}
+		 \cosh (\phi) & -\sinh (\phi) & 0 & 0 \\
+		 -\sinh (\phi) & \cosh (\phi) & 0 & 0 \\
+		 0 & 0 & 1 & 0 \\
+		 0 & 0 & 0 & 1 \\
+	\end{array}
+	\right) \\
+	[V]_K &= \mqty(-\sinh (\phi) \\ \cosh (\phi)\\ 0\\ 1) \\
+	[T]_K &= \left(
+		\begin{array}{cccc}
+			 \sinh ^2(\phi) & \sinh (\phi) (-\cosh (\phi)) & 0 & 0 \\
+			 \sinh (\phi) (-\cosh (\phi)) & \cosh ^2(\phi) & 0 & 0 \\
+			 0 & 0 & 0 & 0 \\
+			 0 & 0 & 0 & 1 \\
+		\end{array}
+		\right)  \\
+	[L^{-1}] &= \left(
+		\begin{array}{cccc}
+			 \cosh (\phi) & \sinh (\phi) & 0 & 0 \\
+			 \sinh (\phi) & \cosh (\phi) & 0 & 0 \\
+			 0 & 0 & 1 & 0 \\
+			 0 & 0 & 0 & 1 \\
+		\end{array}
+		\right) .
+\end{align*}
+	
+Con estas matrices se realizan las operaciones propuestas, se utilizó mathematica\footnote{El notebook de mathematica creado lo puede encontrar en \href{https://github.com/DSarceno/Semestre7/tree/main/Relatividad\%20Especial/Rese\%C3\%B1a}{GitHub}} para facilitar la operatoria
+	\begin{align*}
+		[V]_{K'} &= [L][V]_K = \mqty(-2 \sinh (\phi) \cosh (\phi) \\ \sinh ^2(\phi)+\cosh ^2(\phi) \\ 0 \\ 1) \\
+		[T]_{K'} &= [L^{-1}]^t [T]_K [L^{-1}] = \left(
+			\begin{array}{cccc}
+				 0 & 2\sinh (\phi) \cosh (\phi) & 0 & 0 \\
+				 0 & \cosh ^2 (\phi) \sinh ^2 (\phi) & 0 & 0 \\
+				 0 & 0 & 0 & 0 \\
+				 0 & 0 & 0 & 1 \\
+			\end{array}
+			\right) \\
+		[a]_K &= \qty([T]^t [V]_K)^t = \mqty(-\sinh ^3(\phi)-\sinh (\phi) \cosh ^2(\phi) \\ \cosh ^3(\phi)+\sinh ^2(\phi) \cosh (\phi) \\ 0 \\ 1) \\
+		a_i V^i &= [a]_K [V]_K = \frac{1}{2} \qty(3 + \cosh{4\phi})
+	\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
