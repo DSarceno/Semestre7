@@ -1,5 +1,7 @@
 # Semestre 7
 ## Licenciatura en Física y Matemática Aplicada
+![REPOSIZE](https://img.shields.io/github/repo-size/DSarceno/Semestre7?style=for-the-badge)
+![TOPLANG](https://img.shields.io/github/languages/top/DSarceno/Semestre7?style=for-the-badge&color=blightgreen)
 
 #### Incluye
 
