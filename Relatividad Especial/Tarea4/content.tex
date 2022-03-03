@@ -1,7 +1,19 @@
-\section{Tema 1: Matrices Isométricas}
+\section{Transformación Propia de Lorentz}
 
-Sabiendo que la matriz es isométrica, cumple $A^t A = AA^t = I_2$, dado que se cumple esto, podemos multiplicar $A^{-1}$, por la derecha, se tiene:
-	$$A^t AA^{-1} = I_2 A^{-1} = A^{-1}$$
+Tomando la transformación propia de Lorentz $L_{+\uparrow} (\beta)$ aplicada al $4-$vector
+	\begin{equation*}
+		L_{+\uparrow} (\beta) \mqty(t \\ \vec{r}) = \mqty( \gamma & -\gamma \beta ^t \\ -\gamma \beta & I + \frac{\gamma - 1}{\beta ^2} \beta \beta ^t ) \mqty(t \\ \vec{r}) = \mqty(t\gamma - \gamma \vec{\beta} ^t \vec{r} \\ -\gamma t \vec{\beta} + \vec{r} + \frac{\gamma - 1}{\vec{\beta} ^t} \vec{\beta} \qty(\vec{\beta} ^t \vec{r})).
+	\end{equation*}
+Dado que $\vec{\beta}$ es un vector columna, el producto $\vec{\beta} ^t \vec{r} = \vec{\beta} \cdot \vec{r}$, con esto, se obtienen las dos relaciones buscadas
+	\begin{equation}
+		\left\{\begin{array}{c}
+			t' = \gamma \qty(t -  \vec{\beta} \cdot \vec{r}) \\
+			\vec{r} ' = -\gamma t \vec{\beta} + \vec{r} + \frac{\gamma - 1}{\vec{\beta} ^t} \vec{\beta} \qty(\vec{\beta} \cdot \vec{r})
+		\end{array}\right. . \label{TransPropV}
+	\end{equation}
 	
-por definición, $AA^{-1} = I_2$, entonces se tiene la igualdad
-	$$\boxed{A^t = A^{-1}}$$
+Para la segunda parte, sabiendo que $A^i = \mqty(t^+ \\ \vec{0})$, utilizando el resultado temporal de \eqref{TransPropV} y dado que $\vec{r} = \vec{0}$, entonces
+	\begin{equation}
+		t^+ = \gamma t,
+	\end{equation}
+lo que implica que $t^+$ y $t$ tienen el mismo signo.
