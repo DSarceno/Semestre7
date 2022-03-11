@@ -67,4 +67,51 @@ Tomando un estado cualquiera $\ket{\phi} = a_j \ket{\alpha _j}$, entonces defini
 	Dado que la delta de kronecker es $1$ solo cuando $i=j$, entonces simplificando la expresión se tiene
 	$$ \Rightarrow \quad \sum _i a_i \ket{\alpha _i} = \ket{\phi}, $$
 	lo que implica que $A = I$ $\hfill \square$
+	
 \section{Problema 8}
+Tomando a ambos vectores en términos de una base ortonormal del espacio y los coeficientes del Fourier ($a_j = \braket{e_j}{\psi}$)
+	\begin{align*}
+		\ket{\phi} &= \sum _\alpha \braket{\mu _\alpha}{\phi} \ket{\mu _\alpha} \\
+		\ket{\psi} &= \sum _\beta \braket{\mu _\beta}{\psi} \ket{\mu _\beta}
+	\end{align*}
+Con esto, encontramos el bra del estado $\ket{\phi}$, aplicando el nuevo funcional al vector $\ket{\psi}$, se tiene
+	\begin{align*}
+		\braket{\phi}{\psi} &= \sum _\alpha \sum _\beta \qty(\braket{\phi}{\mu _\alpha} \bra{\mu _\alpha}) \qty(\braket{\mu _\beta}{\psi} \ket{\mu _\beta}) \\
+		&= \sum _\alpha \sum _\beta \braket{\phi}{\mu _\alpha} \braket{\mu _\beta}{\psi} \underbrace{\braket{\mu _\alpha}{\mu _\beta}}_{\delta_{\alpha \beta}} .
+	\end{align*}
+Dada la delta de kroneker, los términos de la sumatoria que permanecen son aquellos cuyos índices $\alpha = \beta$, entonces solo permanece una de las dos sumatorias
+	\begin{align*}
+		\braket{\phi}{\psi} &= \sum _\alpha \braket{\phi}{\mu _\alpha} \braket{\mu _\alpha}{\psi} \\
+		\braket{\phi}{\psi} &= \bra{\phi}\underbrace{\qty(\sum _\alpha \ketbra{\mu _\alpha}{\mu _\alpha})}_{I} \ket{\psi} .
+	\end{align*}
+Lo que demuestra lo solicitado.
+
+\section{Problema 9}
+
+Dado que la el operador cumple con $H^4 = I$, aplicamos el operador $4$ veces a un vector propio cualquiera, con lo que se tiene
+	$$H^4 \ket{\psi _n} = a_n ^4 \ket{\psi _n} = I\ket{\psi _n},$$
+	con esto, se tiene la ecuación algebraica 
+	\begin{equation}
+		a_n ^4 - 1 = 0. \label{Eq9}
+	\end{equation}
+\begin{enumerate}[a)]
+	\item Teniendo \eqref{Eq9} y que $H$ es hermítico (valores propios reales), las únicas soluciones admitidas son $\boxed{a_n = \pm 1}$.
+	\item Para el caso en el que $H$ no es hermítico, se tiene que $\boxed{a_n = \pm 1, \quad a_n = \pm i}$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%5
