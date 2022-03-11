@@ -1,0 +1,70 @@
+\section{Problema 1}
+Tomando dos estados $\ket{\psi} ,\ket{\phi} \in \Hilbert$ y dos operadores hermíticos $A,B$, entonces, por definición, se tiene
+	\begin{align*}
+		\mel{\psi}{A}{\phi} &= \mel{\phi}{A}{\psi} ^* \\
+		\mel{\psi}{B}{\phi} &= \mel{\phi}{B}{\psi} ^*		
+	\end{align*}
+	por linealidad, sumamos ambas expresiones
+	\begin{align*}
+		\bra{\psi} \qty(A\ket{\phi} + B\ket{\phi}) &= \qty[\bra{\phi} \qty(A\ket{\psi} + B\ket{\psi})]^* \\
+		\mel{\psi}{(A+B)}{\phi} &= \mel{\phi}{(A+B)}{\psi} ^* .
+	\end{align*}
+	Con esto, queda demostrado que $(A + B) = (A + B)^\dagger$
+	
+\section{Problema 2}
+Teniendo dos operadores unitarios $U_1$ y $U_2$, tomamos el nuevo operador $U_1 U_2$, con esto, aplicamos su operador adjunto
+	\begin{align*}
+		U_1 U_2 (U_1 U_2)^\dagger &= U_1 \underbrace{U_2 U_2 ^\dagger}_{=I} U_1 ^\dagger \\
+		U_1 U_1 ^\dagger &= I,
+	\end{align*}
+	esto se cumple por propiedades de los operadores unitarios, y se demuestra que $U_1 U_2$ es unitario.
+	
+\section{Problema 3}
+Dado $C = i[A,B]$ con $A,B$ hermíticos, tomando el adjunto de $C$
+	\begin{align*}
+		C^\dagger = i^* [A,B]^\dagger &= -i\qty((AB)^\dagger - (BA)^\dagger) \\
+		&= -i\qty(B^\dagger A^\dagger - A^\dagger B^\dagger) \\
+		&= -i\qty(BA-AB) \\
+		&= i\qty(AB-BA) = C.
+	\end{align*}
+	Con esto queda demostrado que le operador $C$ es hermítico.
+	
+\section{Problema 4}
+Dados $A$ y $B$ hermíticos:
+	\begin{enumerate}[a)]
+		\item $(\Rightarrow)$ dado que $AB = (AB)^\dagger$, tomando el lado derecho $(AB)^\dagger = B^\dagger A^\dagger = BA$, esto implica que $[A,B] = 0$, por lo que conmutan. $\hfill \square$ \\
+		$(\Leftarrow)$ Dado que $[A,B] = 0$, entonces $0 = AB - BA = AB - B^\dagger A^\dagger = AB - (AB)^\dagger = 0$, lo que implica que $AB$ es hermítico. $\hfill \square$
+		\item Dado $(A+B)^n$ tomamos el binomio de newton y aplicamos el adjunto
+		\begin{align*}
+			(A + B)^{n ^\dagger} &= \sum _{k = 0} ^n \mqty(n \\ k) \qty(A^{n-k} B^k)^\dagger \\
+			&= \sum _{k = 0} ^n \mqty(n \\ k) (B^\dagger)^k (A^\dagger)^{n-k}
+		\end{align*}
+		renombrando los exponentes (esto se puede hacer puesto solo es cambiar el orden de las sumas y los operadores son conmutativos respecto a la suma)
+		\begin{align*}
+			&= \sum _{k = 0} ^n \mqty(n \\ k) B^{n - k} A ^k = (B + A)^n = (A + B)^n
+		\end{align*}
+		entonces, $(A + B)^n$ es hermítico $\hfill \square$
+	\end{enumerate}
+	
+\section{Problema 5}
+Dado un operador $A$
+	\begin{align*}
+		(A + A^\dagger) ^ \dagger = A^\dagger + \qty(A^\dagger)^\dagger = A^\dagger + A \quad \quad \quad \quad \square
+	\end{align*}
+	y
+	\begin{align*}
+		\qty[i(A - A^\dagger)]^\dagger = i^* (A^\dagger - A) = i(A - A^\dagger).
+	\end{align*}
+\section{Problema 6}
+Dado un $A$ hermítico, entonces $\qty(e^{iA})^\dagger = e^{-iA^\dagger} = e^{-iA}$ esto es fácil ver debido a la expanción Taylor de la exponencial. Con esto
+	\begin{align*}
+		\qty(e^{iA}) \qty(e^{-iA}) = I.
+	\end{align*}
+	
+\section{Problema 7}
+Tomando un estado cualquiera $\ket{\phi} = a_j \ket{\alpha _j}$, entonces definimos $A = \sum _i \ketbra{\alpha _i}{\alpha _i}$, aplicando $A$ al estado, se tiene
+	$$ A\ket{\phi} = \sum _i \sum _j a_j \ket{\alpha_i} \underbrace{\bra{\alpha _i} \ket{\alpha _j}}_{\delta _{ij}}. $$
+	Dado que la delta de kronecker es $1$ solo cuando $i=j$, entonces simplificando la expresión se tiene
+	$$ \Rightarrow \quad \sum _i a_i \ket{\alpha _i} = \ket{\phi}, $$
+	lo que implica que $A = I$ $\hfill \square$
+\section{Problema 8}
