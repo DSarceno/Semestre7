@@ -30,7 +30,7 @@ Conmutator[SqMatrix1_,SqMatrix2_]:=SqMatrix1 . SqMatrix2 - SqMatrix2 . SqMatrix1
 
 
 (* GeneralProbability *)
-GeneralProbability[SqMatrix_,State_,Eigenvalue_]:=Piecewise[{{(Abs[# . State]^2)/(Norm[#]^2*Norm[State]^2)&/@Eigensystem[SqMatrix][[2,Position[Eigensystem[SqMatrix][[1]],Eigenvalue][[1]]]],Count[Eigenvalues[SqMatrix],Eigenvalue]==1},{Total[Abs[# . State]^2/(Norm[#]^2*Norm[State]^2)&/@ObservableEV[SqMatrix,Eigenvalue]],Count[Eigenvalues[SqMatrix],Eigenvalue]>1}}]
+GeneralProbability[SqMatrix_,State_,Eigenvalue_]:=Plus@@((Abs[# . State]^2)/(Norm[#]^2*Norm[State]^2)&/@ObservableEV[SqMatrix,Eigenvalue])
 
 
 End[];
