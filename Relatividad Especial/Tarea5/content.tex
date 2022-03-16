@@ -1,0 +1,41 @@
+\section{D'Alemebertiano}
+Dado el D'Alembertiano
+	$$\square ^2 = \nabla ^2 - \pdv[2]{t} ,$$
+y dos sistemas de coordenadas
+	$(l,x,y,z),(l',x',y',z')$, con $l=ct$.
+\begin{enumerate}[a)]
+	\item Dadas las transformaciones de Lorentz
+		$$
+			\left\{
+				\mqty{x = ax' + bl', \\ l = bx' + al', \\ y = y', \\ z = z'.}
+			\right.
+		$$
+		Para transformar el D'Alembertiano al sistema de coordenadas primado, tomamos la relación entre las derivadas parciales
+		$$\pdv{x'} = \pdv{x}{x'} \pdv{x} + \pdv{l}{x'} \pdv{l} = a\pdv{x} + b\pdv{l} ,$$
+		$$\pdv{l'} = \pdv{x}{l'} \pdv{x} + \pdv{l}{l'} \pdv{l} = b\pdv{x} + a\pdv{l} ,$$
+		$$\pdv{y'} = \pdv{y} ,$$
+		$$\pdv{z'} = \pdv{z} .$$
+		Teniendo esto, encontramos la segunda derivada, aplicando cada operador encontrado consigo mismo
+		$$ \qty(\pdv[2]{\, \cdot \,}{x})^\prime = a^2 \pdv[2]{\, \cdot \,}{x} + b^2 \pdv[2]{\, \cdot \,}{l} + 2ab\pdv{\, \cdot \,}{x}{l}, $$
+		$$ \qty(\pdv[2]{\, \cdot \,}{l})^\prime = b^2 \pdv[2]{\, \cdot \,}{x} + a^2 \pdv[2]{\, \cdot \,}{l} + 2ab\pdv{\, \cdot \,}{x}{l}. $$
+		Dado el D'Almebertiano primado, sustituímos las relaciones encontradas, reduciendo se tiene
+		$$\square ^{\prime ^2} = \qty(a^2 - b^2) \qty(\pdv[2]{\, \cdot \, }{x} - \pdv[2]{\, \cdot \, }{l}) + \pdv[2]{\, \cdot \, }{y} + \pdv[2]{\, \cdot \, }{z}.$$
+		$\hfill \square$
+	\item Sabiendo que, $a = \gamma ,\, b = \beta \gamma$ y $\gamma = \flatfrac{1}{\sqrt{1 - \beta ^2}}$, con esto y la relación obtenida en la reseña realizada ($\gamma ^2 = \beta ^2 \gamma ^2 + 1$), simplificando
+		$$\square ^{\prime ^2} = \square ^2$$
+		$\hfill \square$
+	\item Dada la función de onda electromagnética $\phi$ y la relación $\square ^2 \phi = 0$, dado que bajo la transformación de Lorentz $\square ^{\prime ^2} = \square ^2$, entonces $\square ^{\prime ^2} \phi = 0$, entonces es covariante bajo la transformación de Lorentz. Tomando las transformaciones Galileanas
+		$$
+			\left\{
+				\mqty{x = kl' + x', \\ y = y', \\ z = z', \\ l' = l.}
+			\right.
+		$$
+		Con esto, encontramos el D'Alembertiano mediante la transformacion Galileana, se tienen las segundas derivadas
+			$$\qty(\pdv[2]{\, \cdot \, }{x})^\prime = \pdv[2]{\, \cdot \, }{x} ,$$
+			$$\qty(\pdv[2]{\, \cdot \, }{y})^\prime = \pdv[2]{\, \cdot \, }{y} ,$$
+			$$\qty(\pdv[2]{\, \cdot \, }{z})^\prime = \pdv[2]{\, \cdot \, }{z} ,$$
+			$$\qty(\pdv[2]{\, \cdot \, }{l})^\prime = b^2 \pdv[2]{\, \cdot \, }{x} + \pdv[2]{\, \cdot \, }{l} + b\pdv{\, \cdot \, }{x}{l} .$$
+		Sustituyendo en el D'Alembertiano
+			$$\square ^{\prime ^2} _{\text{gal}} = \nabla ^2 - b^2 \pdv[2]{\, \cdot \, }{x} - \pdv[2]{\, \cdot \, }{l} - b\pdv{\, \cdot \, }{x}{l} \neq \square ^2 .$$
+		Con esto, es claro que el D'Alembertiano no es covariante bajo la transformación Galileana. $\hfill \square$
+\end{enumerate}
