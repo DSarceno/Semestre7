@@ -1,0 +1,22 @@
+\section{Distribución de Probabilidad Discreta}
+\subsection*{273}
+Dada la variable aleatoria $X$ con distribución $\{ 1,\ldots ,n \}$. Calculamos lo siguiente
+\begin{itemize}
+	\item $\mathbf{E(X)}$ Por definición
+		$$E(X) = \sum _{i=0} ^n x_i f(x_i) = \frac{1}{n} \underbrace{\sum _{i=0} ^n x_i}_{\frac{n(n+1)}{2}} = \frac{n+1}{2}.$$
+	\item $\mathbf{E(X^2)}$ Por definición
+		$$E(X^2) = \sum _{i=0} ^n x_i ^2 f(x_i) = \frac{1}{n} \underbrace{\sum _{i=0} ^n x_i ^2 x_i ^2}_{\frac{n(n+1)(2n+1)}{6}} = \frac{(n+1)(2n+1)}{6} .$$
+	\item $\mathbf{V(X)}$ Por definición de varianza
+		$$V(X) = E(X^2) - E(X)^2 = \frac{(n+1)(2n+1)}{6} - \frac{n+1}{2},$$
+	simplificando con Mathematica (porque ya no estamos para estos trotes xD)
+		$$V(X) = \frac{n^2 - 1}{12} .$$
+\end{itemize}
+
+\section{Distribución de Probabilidad de Bernoulli}
+\subsection*{286}
+Teniendo la varianza para la distribución de Bernoulli $V(X) = p(1-p)$, encontramos $p$ para maximizar $V(X)$,
+	$$\dv{p} V(X) = 1-2p = 0 \quad \quad \Rightarrow \quad \quad \boxed{p=\frac{1}{2}}.$$
+\section{Distribución de Probabilidad Binomial}
+\subsection*{305}
+Dados los datos $p = 0.9$ y $n = 20$, queremos obtener la probabilidad de no tener el ni el mínimo de éxito, es decir, $x = 18$, por ende queremos la probabilidad acumulada hasta $x = 17$. Utilizando la siguiente función de \textit{R}: \texttt{pbinom(17, size = 20, prob = 0.9)}. Con dicha función se tiene $P(X\leq 17) = \displaystyle\sum _{x=0} ^{17} \binom{20}{x} p^x (1-p)^{20-x} = 0.3230732.$
+\section{Distribución de Probabilidad Geométrica}
