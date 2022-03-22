@@ -23,13 +23,15 @@ Para maximizarlo, utilizamos los multiplicadores de Lagrange, definimos la funci
 	\end{equation}
 	
 \section{Problema 2}
-Sabiendo que el valor esperado de la energía es $\langle E_i \rangle = \varepsilon$, entonces tomando la función de partición y derivando la respecto a $\beta$
+Sabiendo que el valor esperado de la energía es $\langle E_i \rangle = U$, entonces tomando la función de partición y derivando la respecto a $\beta$
 	$$ \dv{\partition}{\beta} = \sum _{i = 1} ^k -E_i e^{-\beta E_i}, $$
 	multiplicando y dividiendo entre la función de partición se tiene
-	$$\frac{1}{\partition} \dv{\partition}{\beta} = -\sum _{i = 1} ^k p_i E_i = -\varepsilon .$$
+	$$\frac{1}{\partition} \dv{\partition}{\beta} = -\sum _{i = 1} ^k p_i E_i = -U .$$
 	Por regla de la cadena 
 	$$\dv{\ln{\partition}}{\beta} = \dv{\ln{\partition}}{\partition} \dv{\partition}{\beta} = \frac{1}{\partition} \dv{\partition}{\beta}.$$
-	$$\boxed{\frac{1}{\partition} \dv{\partition}{\beta} = -\varepsilon}$$
+	$$\dv{\ln{\partition}}{\beta} = -U.$$
+	Teniendo esto, y sabiendo que $\beta = \flatfrac{1}{k_B T}$, encontramos el diferencial de esta expresión $\dd{\beta} = \flatfrac{-\dd{T}}{k_B T^2}$, sustituyendo el diferencial en la expresión anterior
+		$$\boxed{k_B T^2 \dv{\ln{\partition}}{T} = U}$$
 	
 \section{Problema 3}
 Tomando la entropía 
@@ -37,37 +39,27 @@ Tomando la entropía
 sustituyendo la probabilidad definida como
 	$$\ln{p_i} = -\beta E_i - \ln{\partition}.$$
 Sustituyendo en la ecuación de entropía se tiene
-	$$S = k_B \beta \underbrace{\sum_{i = 1} ^k p_i E_i}_{\varepsilon} + k_B \ln{\partition} \underbrace{\sum _{i = 1} ^k p_i}_{1},$$
+	$$S = k_B \beta \underbrace{\sum_{i = 1} ^k p_i E_i}_{U} + k_B \ln{\partition} \underbrace{\sum _{i = 1} ^k p_i}_{1},$$
 	entonces
 	\begin{equation}
-		S = k_B \qty(\beta \varepsilon + \ln{\partition}) \label{Entropy}
+		S = k_B \qty(\beta U + \ln{\partition}) \label{Entropy}
 	\end{equation}
+	Teniendo \eqref{Entropy} sustituímos la definición de $\beta$, entonces
+	$$\boxed{S = \frac{U}{T} + k_B \ln{\partition}}$$
 	
 \section{Problema 4}
-\begin{enumerate}[a)]
-	\item Dado que tenemos $7$ sabores y queremos un helado de $4$ bolas en el que el orden importa es tenemos una disposición $n^k = 7^4 = 2401$.
-	\item Si no se puede repetir, para el mismo conjunto de datos $P^k _n = \frac{n!}{(n - k) !} = 840$.
-\end{enumerate}
+Tomando la relación obtenida en el ejercicio anterior, despejamos la función $\partition$,
+	$$TS = U + \frac{1}{\beta} \ln{\partition} ,$$
+	$$-\beta \qty(U - TS) = \ln{\partition},$$
+	entonces
+	$$\boxed{\partition = e^{-\beta F}}$$
+	con $F = U - TS$.
 
 \section{Problema 5}
-\begin{enumerate}[a)]
-	\item Dado que tenemos $7$ sabores y queremos un helado de $4$ bolas en el que el orden importa es tenemos una distribución $\displaystyle\binom{n-1+k}{k} = 210$.
-	\item Si no se puede repetir, para el mismo conjunto de datos $\displaystyle\binom{n}{k} = \frac{n!}{k! (n - k) !} = 35$.
-\end{enumerate}
-
-\section{Problema 6}
-La cantidad de microestados esta dada por
-\begin{equation}
-	\Omega = \frac{n!}{n_1 ! \cdots n_k !}. \label{microestados}
-\end{equation}
-\begin{enumerate}[a)]
-	\item Para los $7$ en $B2$ $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (0,7,0,0,0,0)$. Entonces, utilizando \eqref{microestados} con $k = 6$ (número de bares), se tiene que la cantidad de microestados es $\Omega = 1$. El cual es un microestado admisible.
-	\item Para $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (2,2,1,1,1,0)$, calculando el número de microestados: $\Omega = 1260$ microestados, los cuales son admisibles.
-	\item Para $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (2,1,3,0,0,1)$. Calculando el número de microestados: $\Omega = 420$, los cuales son admisibles.
-	\item Para $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (2,1,1,1,1,1)$. Calculando el número de microestados $\Omega = 2520$, los cuales no son admisibles.
-	\item Dada la entropía $S = k_B \ln{\Omega}$, la distribución con microestados admisibles que generan la entropía máxima es la $c)$.
-\end{enumerate}
-
+Encontrando el diferencial de la función de Helmholtz, sabiendo que $\dd{U} = T\dd{S} - p\dd{V}$, entonces 
+	$$\dd{F} = T\dd{S} - p\dd{V} - T\dd{S} - S\dd{T} = -S\dd{T} - p\dd{V}.$$
+Lo que implica directamente que
+	$$\boxed{S = -\qty(\pdv{F}{T})_V}$$
 
 
 
