@@ -1,0 +1,92 @@
+\section{Problema 1}
+Teniendo 
+	$$S = -k_B \sum _{k=1} ^k p_i \ln{p_i},$$
+sujeto a
+	$$\sum _{k=1} ^k p_i = 1, \quad \quad \quad \quad \sum _{k=1} ^k p_i E_i = \varepsilon .$$
+Para maximizarlo, utilizamos los multiplicadores de Lagrange, definimos la función $F(p_1 ,\ldots ,\lambda _i ,\ldots)$, como
+	$$F(p_1 ,\ldots ,\lambda _i ,\ldots) = S - \lambda _1 \qty(\sum_{i=1} ^k p_i - 1) - \lambda _2 \qty(\sum _{i=1} ^k p_i E_i - \varepsilon),$$
+	de modo que
+	$$F = -k_B \sum _{k=1} ^k p_i \ln{p_i} - \lambda _1 \qty(\sum_{i=1} ^k p_i - 1) - \lambda _2 \qty(\sum _{i=1} ^k p_i E_i - \varepsilon).$$
+	Tomando las derivadas parciales respecto a cada una de las probabilidades $p_i$, entonces
+	\begin{align*}
+		\pdv{F}{p_k} &= -k_B \qty(\ln{p_k} - 1) - \lambda _1 - \lambda _2 E_k = 0 \\
+		\pdv{F}{\lambda _1} &= \sum_{i=1} ^k p_i - 1 = 0 \\
+		\pdv{F}{\lambda _2} &= \sum_{i=1} ^k p_i E_i - \varepsilon = 0.
+	\end{align*}
+	Para poder factorizar el $k_B$, tomamos el siguiente cambio de parámetros $\lambda _1 = k_B \alpha$ y $\lambda _2 = k_B \beta$. En donde $\alpha$ es adimensional y $[ \beta ] = \flatfrac{1}{J}$. Con esto, llegamos a la relación
+		$$-k_B \qty(\ln{p_i} + 1 + \alpha + \beta E_i) = 0 \quad \quad \quad \Rightarrow \quad \quad \quad  \ln{p_i} = -(1+\alpha) - \beta E_i ,$$
+		dado esto introducimos la función de partición
+		$$ \mathfrak{z} = e^{1 + \alpha} \quad \quad \quad \Rightarrow \quad \quad \quad p_i = \frac{1}{\partition} e^{-\beta E_i} ,$$
+		pero sabemos que $\displaystyle\sum _{i = 1} ^k p_i = 1$, sustituyendo se obtiene la definición de función de partición, con el nuevo parámetro $T = \flatfrac{1}{k_B \beta}$ ($[T] = K$)
+	\begin{equation}
+		\mathfrak{z}(\beta) = \sum _{i = 1} ^k e^{-\frac{-E_i}{k_B T}} \label{FuncionDeParticion}
+	\end{equation}
+	
+\section{Problema 2}
+Sabiendo que el valor esperado de la energía es $\langle E_i \rangle = \varepsilon$, entonces tomando la función de partición y derivando la respecto a $\beta$
+	$$ \dv{\partition}{\beta} = \sum _{i = 1} ^k -E_i e^{-\beta E_i}, $$
+	multiplicando y dividiendo entre la función de partición se tiene
+	$$\frac{1}{\partition} \dv{\partition}{\beta} = -\sum _{i = 1} ^k p_i E_i = -\varepsilon .$$
+	Por regla de la cadena 
+	$$\dv{\ln{\partition}}{\beta} = \dv{\ln{\partition}}{\partition} \dv{\partition}{\beta} = \frac{1}{\partition} \dv{\partition}{\beta}.$$
+	$$\boxed{\frac{1}{\partition} \dv{\partition}{\beta} = -\varepsilon}$$
+	
+\section{Problema 3}
+Tomando la entropía 
+	$$S = -k_B \sum _{i = 1} ^k p_i \ln{p_i},$$
+sustituyendo la probabilidad definida como
+	$$\ln{p_i} = -\beta E_i - \ln{\partition}.$$
+Sustituyendo en la ecuación de entropía se tiene
+	$$S = k_B \beta \underbrace{\sum_{i = 1} ^k p_i E_i}_{\varepsilon} + k_B \ln{\partition} \underbrace{\sum _{i = 1} ^k p_i}_{1},$$
+	entonces
+	\begin{equation}
+		S = k_B \qty(\beta \varepsilon + \ln{\partition}) \label{Entropy}
+	\end{equation}
+	
+\section{Problema 4}
+\begin{enumerate}[a)]
+	\item Dado que tenemos $7$ sabores y queremos un helado de $4$ bolas en el que el orden importa es tenemos una disposición $n^k = 7^4 = 2401$.
+	\item Si el orden no importa, para el mismo conjunto de datos $P _7 ^4 = \frac{n!}{(n - k) !} = 840$.
+\end{enumerate}
+
+\section{Problema 5}
+Es el mismo problema que el anterior.
+
+\section{Problema 6}
+La cantidad de microestados esta dada por
+\begin{equation}
+	\Omega = \frac{n!}{n_1 ! \cdots n_k !}. \label{microestados}
+\end{equation}
+\begin{enumerate}[a)]
+	\item Para los $7$ en $B2$ $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (0,7,0,0,0,0)$. Entonces, utilizando \eqref{microestados} con $k = 6$ (número de bares), se tiene que la cantidad de microestados es $\Omega = 1$. El cual es un microestado admisible.
+	\item Para $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (2,2,1,1,1,0)$, calculando el número de microestados: $\Omega = 1260$ microestados, los cuales son admisibles.
+	\item Para $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (2,1,3,0,0,1)$. Calculando el número de microestados: $\Omega = 420$, los cuales son admisibles.
+	\item Para $(n_1 ,n_2 ,n_3 ,n_4 ,n_5 ,n_6) = (2,1,1,1,1,1)$. Calculando el número de microestados $\Omega = 2520$, los cuales no son admisibles.
+	\item Dada la entropía $S = k_B \ln{\Omega}$, la distribución con microestados admisibles que generan la entropía máxima es la $c)$.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%
