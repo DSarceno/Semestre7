@@ -1,26 +1,20 @@
 \section{Problema 1}
-Teniendo 
-	$$S = -k_B \sum _{k=1} ^k p_i \ln{p_i},$$
-sujeto a
-	$$\sum _{k=1} ^k p_i = 1, \quad \quad \quad \quad \sum _{k=1} ^k p_i E_i = \varepsilon .$$
-Para maximizarlo, utilizamos los multiplicadores de Lagrange, definimos la función $F(p_1 ,\ldots ,\lambda _i ,\ldots)$, como
-	$$F(p_1 ,\ldots ,\lambda _i ,\ldots) = S - \lambda _1 \qty(\sum_{i=1} ^k p_i - 1) - \lambda _2 \qty(\sum _{i=1} ^k p_i E_i - \varepsilon),$$
-	de modo que
-	$$F = -k_B \sum _{k=1} ^k p_i \ln{p_i} - \lambda _1 \qty(\sum_{i=1} ^k p_i - 1) - \lambda _2 \qty(\sum _{i=1} ^k p_i E_i - \varepsilon).$$
-	Tomando las derivadas parciales respecto a cada una de las probabilidades $p_i$, entonces
-	\begin{align*}
-		\pdv{F}{p_k} &= -k_B \qty(\ln{p_k} - 1) - \lambda _1 - \lambda _2 E_k = 0 \\
-		\pdv{F}{\lambda _1} &= \sum_{i=1} ^k p_i - 1 = 0 \\
-		\pdv{F}{\lambda _2} &= \sum_{i=1} ^k p_i E_i - \varepsilon = 0.
-	\end{align*}
-	Para poder factorizar el $k_B$, tomamos el siguiente cambio de parámetros $\lambda _1 = k_B \alpha$ y $\lambda _2 = k_B \beta$. En donde $\alpha$ es adimensional y $[ \beta ] = \flatfrac{1}{J}$. Con esto, llegamos a la relación
-		$$-k_B \qty(\ln{p_i} + 1 + \alpha + \beta E_i) = 0 \quad \quad \quad \Rightarrow \quad \quad \quad  \ln{p_i} = -(1+\alpha) - \beta E_i ,$$
-		dado esto introducimos la función de partición
-		$$ \mathfrak{z} = e^{1 + \alpha} \quad \quad \quad \Rightarrow \quad \quad \quad p_i = \frac{1}{\partition} e^{-\beta E_i} ,$$
-		pero sabemos que $\displaystyle\sum _{i = 1} ^k p_i = 1$, sustituyendo se obtiene la definición de función de partición, con el nuevo parámetro $T = \flatfrac{1}{k_B \beta}$ ($[T] = K$)
-	\begin{equation}
-		\mathfrak{z}(\beta) = \sum _{i = 1} ^k e^{-\frac{-E_i}{k_B T}} \label{FuncionDeParticion}
-	\end{equation}
+Teniendo el sistema $A^{(0)}$ compuesto por $A$ y $A'$ y sabiendo que $A$ es muy pequeño en comparaión con $A'$, por conservación de la energía	
+	$$E_r + E' = E^{(0)}.$$
+Entonces, cuanto $A$ tiene una energía $E_r$ $A'$ tiene energía $E' = E^{(0)} - E_r$. Si $A$ esta en un estado definido $r$ el número de estados accesibles para $A'$ en el sistema total $A^{(0)}$ es
+	$$\Omega ' (E^{(0)} - E_r);$$
+además, se postula que en una situación de equilibrio es igualmente probable que el sistema se encuentre en cualquiera de sus estados accesibles $P_r = C$, entonces
+	$$P_r = C' \Omega ' (E^{(0)} - E_r).$$
+Como $A$ es mucho menor a $A'$ podemos aproximar el número de estados accesibles, utilizando logaritmos para poder utilizar las series de Taylor. Como $E_r \ll E^{(0)}$, realizamos la siguiente expansión
+	$$\ln{\Omega ' (E^{(0)} - E_r)} \approx \ln{\Omega '(E^{(0)})} - E_r \pdv{\ln{\Omega ' (E^{(0)})}}{E'} + \cdots ,$$
+y definimos a $\beta$ como 
+	$$\beta = \pdv{\ln{\Omega ' (E^{(0)})}}{E'}.$$
+Dada la expansión realizada se tiene
+	$$\Omega '(E^{(0)} - E_r) = \underbrace{\Omega '(E^{(0)})}_{C'} e^{-\beta E_r},$$
+entonces
+	$$P_r = C' e^{-\beta E_r}.$$
+Sabiendo que $\sum _r P_r = 1$, encontramos la constante de normalización $\partition = \sum _r e^{-\beta E_r}$, entonces es claro que
+	$$\boxed{P_r = \frac{e^{-\beta E_r}}{\displaystyle\sum _i e^{-\beta E_i}}}$$
 	
 \section{Problema 2}
 Sabiendo que el valor esperado de la energía es $\langle E_i \rangle = U$, entonces tomando la función de partición y derivando la respecto a $\beta$
