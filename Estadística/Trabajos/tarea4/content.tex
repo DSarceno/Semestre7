@@ -20,3 +20,7 @@ Teniendo la varianza para la distribución de Bernoulli $V(X) = p(1-p)$, encontr
 \subsection*{305}
 Dados los datos $p = 0.9$ y $n = 20$, queremos obtener la probabilidad de no tener el ni el mínimo de éxito, es decir, $x = 18$, por ende queremos la probabilidad acumulada hasta $x = 17$. Utilizando la siguiente función de \textit{R}: \texttt{pbinom(17, size = 20, prob = 0.9)}. Con dicha función se tiene $P(X\leq 17) = \displaystyle\sum _{x=0} ^{17} \binom{20}{x} p^x (1-p)^{20-x} = 0.3230732.$
 \section{Distribución de Probabilidad Geométrica}
+\section{Distribución de Probabilidad Binomial Negativa}
+\subsection*{331}
+Dado que necesitamos $n$ lanzamientos y $r = 6$ éxitos; por ende, el número de fracasos $x = n - r$. Sustituyendo en la función de densidad de probabilidad
+	$$\boxed{f(n - 6) = \binom{n - 1}{n - 6} \qty(\frac{1}{6})^6 \qty(\frac{5}{6})^{n - 6} .}$$
