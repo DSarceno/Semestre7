@@ -24,3 +24,65 @@ Dados los datos $p = 0.9$ y $n = 20$, queremos obtener la probabilidad de no ten
 \subsection*{331}
 Dado que necesitamos $n$ lanzamientos y $r = 6$ éxitos; por ende, el número de fracasos $x = n - r$. Sustituyendo en la función de densidad de probabilidad
 	$$\boxed{f(n - 6) = \binom{n - 1}{n - 6} \qty(\frac{1}{6})^6 \qty(\frac{5}{6})^{n - 6} .}$$
+
+\section{Distribución de Probabilidad Hipergeométrica}
+\subsection*{341}
+Dados los datos, se tiene $N = 100$, $K = 90$, $n = 5$ y $x \in [2,n]$. Con esto, dado que queremos la probabilidad de que se realize la compra, calculamos
+	$$1 - \sum _{x = 2} ^5 \frac{\binom{90}{x} \binom{10}{5 - x}}{\binom{100}{5}} = 0.9231433.$$
+Para esto se utilizó \textit{R}. \\
+{\tt
+var1 <- 0 \\
+for (i in 2:5)\{ \\
+var1 <- var1 + dhyper(i,90,10,5) \\
+\}
+}
+
+\section{Distribución de Probabilidad de Poisson}
+\subsection*{343}
+Encontrando el valor esperado $E(X)$
+\begin{align*}
+	E(X) &= \sum _x ^\infty x e^{-\lambda} \frac{\lambda ^x}{x!} \\
+	&= \sum _x ^\infty e^{-\lambda} \frac{\lambda ^x}{(x - 1)!}
+\end{align*}
+\begin{align*}
+	&= \lambda e^{-\lambda} \underbrace{\sum _x ^\infty \frac{\lambda ^{x - 1}}{(x - 1)!}}_{e^\lambda} \\
+	&= \lambda .
+\end{align*}
+
+Ahora, encontrando la varianza $V(X) = E(X^2) - E(X)^2$, encontramos la esperanza de $X^2$
+	\begin{align*}
+		E(X^2) &= \sum _x x^2 e^{-\lambda} \frac{\lambda ^x}{x!} \\
+		&= \sum _x \lambda xe^{-\lambda} \frac{\lambda ^{x - 1}}{(x - 1)!} \\
+		&= \lambda e^{-\lambda} \sum _j (j + 1) \frac{\lambda ^j}{j!} \\
+		&= \lambda e^{-\lambda} \qty[\underbrace{\sum _j j\frac{\lambda ^j}{j!}}_{\lambda e^\lambda} + \underbrace{\sum _j \frac{\lambda ^j}{j!}}_{e^\lambda}] \\
+		&= \lambda ^2 + \lambda ,
+	\end{align*}
+
+entonces
+\begin{align*}
+	V(X) &= \lambda ^2 + \lambda - \lambda ^2 \\
+	&= \lambda .
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%
