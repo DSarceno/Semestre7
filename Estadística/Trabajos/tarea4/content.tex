@@ -66,10 +66,27 @@ entonces
 
 
 
+\section{Distribución de Probabilidad Uniforme Continua}
+\subsection*{357}
+
+\begin{enumerate}[a)]
+	\item Entontrando $E(X)$, se tiene que $f(x) = \frac{1}{b-a}$, entonces
+		$$E(X) = \int _a ^b \frac{x}{b-a} \dd{x} = \frac{1}{b-a} \frac{b^2 - a^2}{2} = \frac{a+b}{2}.$$
+	\item Encontrando $E(X^2)$, entonces, realizando la integral
+		$$\int _a ^b \frac{x^2}{b-a} \dd{x} = \frac{1}{b-a} \frac{b^3 - a^3}{3} = \frac{b^2 + ab + a^2}{3}.$$
+	\item Encontrando la varianza,
+		$$Var(X) = E(X^2) - E(X)^2 = \frac{a^2 + ab + b^2}{3} - \frac{(a + b)^2}{4} = \frac{a^2 + b^2}{12} - \frac{ab}{6} = \frac{(a - b)^2}{12}.$$
+\end{enumerate}
 
 
-
-
+\section{Distribución de Probabilidad Exponencial}
+\subsection*{375}
+Encontramos el enésimo momento, $E(X^n)$, realizando la integral
+	$$E(X^n) = \lambda \int _0 ^\infty x^n e^{-\lambda x} \dd{x},$$
+realizando el cambio de variable $\lambda x = t$, se tiene
+	$$\int _0 ^\infty \qty(\frac{t}{\lambda})^n e^{-t} \dd{t} = \frac{1}{\lambda ^n} \int _0 ^\infty t^n e^{-t} \dd{t},$$
+la cual es exactamente a la función Gamma valuada en $n+1$, $\Gamma (n+1) = n!$, por lo tanto
+	$$E(X^n) = \frac{\Gamma (n+1)}{\lambda ^n} = \frac{n!}{\lambda ^n}.$$
 
 
 

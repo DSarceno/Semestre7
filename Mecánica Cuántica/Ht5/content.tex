@@ -1,0 +1,56 @@
+\section{Problema 1}
+
+\begin{enumerate}[a.]
+	\item Demostración de identidades
+	\begin{enumerate}[a)]
+		\item Partiendo del lado derecho de la ecuación,
+			\begin{align*}
+				[A,C] + [B,C] &= \qty(AC - CA)+ \qty(BC - CB) \\
+				&= (A + B)C - C(A + B) \\
+				&= [A + B,C].
+			\end{align*}
+		$\hfill \square$
+		\item Partiendo del lado derecho de la ecuación,
+			\begin{align*}
+				A[B,C] + [A,C]B &= A(BC - CB) + (AC - CA)B \\
+				&= ABC - ACB + ACB - CAB \\
+				&= ABC - CAB = (AB)C - C(AB) \\ 
+				&= [AB,C].
+			\end{align*}
+			$\hfill \square$
+	\end{enumerate}
+	\item Tomando la relación obtenida en $1.a.b.$ separamos $[x^n ,p]$ en $x^{n-1} [x,p] + [x^{n - 1} ,p] x = i\hbar x^{n - 1} + [x^{n-1},p]x$, utilizamos esta misma idea para realizar este proceso $n - 1$ veces. La segunda vez sería $[x^n ,p] = 2i\hbar x^{n - 1} + [x ^{n - 2} ,p] x^2$. Luego de realizarlo $n - 1$ veces llegamos a $(n - 1)i\hbar x^{n - 1} + [x,p] x^{n - 1}$, entonces $[x^n ,p] = ni\hbar x^{n - 1}$.
+	\item Tomando $[f(x),p]$, dado que $f(x)$ tiene una expansión de Taylor
+			$$f(x) = \sum _j a_j x^j ,$$
+		dada la linealidad en primera componente y por el ejercicio anterior
+			$$\sum _j a_j [x^j ,p] = \sum _j ja_j i\hbar x^{j - 1} = i\hbar \underbrace{\sum _j ja_j x^{j - 1}}_{\dv{\sum _j a_j x^j}{x} = \dv{f(x)}{x}} = i\hbar \dv{f(x)}{x}.$$
+			$\hfill \square$
+	\item Tomando $[\hbar w (a_- a_+ - \flatfrac{1}{2} ,a_\pm)]$, separando por linealidad y la propiedad mostrada en $1.b.$ se tiene
+		$$[\hbar w (a_- a_+ - \flatfrac{1}{2} ,a_\pm)] = \hbar w \qty(\underbrace{[a_- a_+ ,a_\pm]}_{a_- [a_+ ,a_\pm] + [a_- ,a_\pm]a_+} - [\frac{1}{2} I ,a_\pm]),$$
+		depende de lo que se escoja ($+$ o $-$) y sabiendo que $[a_- ,a_+] = 1$, se tiene que $[\hbar w (a_- a_+ - \flatfrac{1}{2} ,a_\pm)] = \pm \hbar wa_\pm$. $\hfill \square$
+\end{enumerate}
+
+\section{Problema 2}
+
+Dada la función de onda
+	$$\psi (x) = \qty(\frac{\alpha}{\pi}) ^{\flatfrac{1}{4}} e^{-\flatfrac{\alpha x^2}{2}},$$
+encontramos 
+	$$\langle x \rangle = \int _{-\infty} ^\infty \psi ^* (x) x \psi (x) \dd{x},$$
+y
+	$$\langle x^2 \rangle = \int _{-\infty} ^\infty \psi ^* (x) x^2 \psi (x) \dd{x}.$$
+
+Utilizando mathematica, para encontrar estas dos integrales y para $n$s mayores, tenemos que para los $n$ pares tenemos una relación, mientras que para $n$ impares el valor esperado es cero. Entonces,
+	
+	$$\langle x \rangle = 0,$$
+	$$\langle x^2 \rangle = \frac{1}{2\alpha}.$$
+Teniendo esta tendencia, entonces
+	$$\boxed{\langle x^{17} \rangle = 0}.$$
+
+
+
+
+
+
+
+
+%%%%%%%5
