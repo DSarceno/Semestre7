@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Upload</title>
+  </head>
+  <body>
+    <div style='text-align:center'>
+    <h1>Subir Archivos</h1>
+    <h5>Ingreso de Datos y Archivo a subir.</h5>
+    <form action='' method='POST' enctype='multipart/form-data'>{% csrf_token %}
+      <table style="margin: 0 auto;">
+        {{ form }}
+      </table>
+      <input type = 'submit' value = 'Upload & Analyze'>
+    </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div style='text-align:center'>
+    <h1>Registrarse</h1>
+    <h5>Datos Personales</h5>
+    <form action='' method='POST'>{% csrf_token %}
+      <table style="margin: 0 auto;">
+        {{form.as_table}}
+      </table>
+      <input type = 'submit' value = 'Sign In'>
+    </form>
+    </div>
+  </body>
+</html>

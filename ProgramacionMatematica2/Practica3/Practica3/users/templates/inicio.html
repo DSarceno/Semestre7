@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Inicio</title>
+  </head>
+  <body>
+    <div style='text-align:center'>
+    <h1>¿Qué desea hacer?</h1>
+    <form action='' method='POST'>{% csrf_token %}
+      <ul>
+        <li><a href="/registro/">Sign In</a></li>
+        <li><a href="/login/">Log In</a></li>
+      </ul>
+    </form>
+    </div>
+  </body>
+</html>
