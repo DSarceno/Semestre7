@@ -1,0 +1,66 @@
+\section{Problema 1}
+\textbf{Se utilizó mathematica, aqui solo aparecerán las respuestas, al final del pdf esta el desarrollo.} \\
+\begin{enumerate}[a)]
+	\item Constante de normalización $\sqrt{\dfrac{a}{\pi}}$.
+	\item La probabilidad de encontrar la partícula en en intervalo $\qty(\frac{-a}{\sqrt{3}} ,\frac{a}{\sqrt{3}})$ es: $\frac{1}{3}$.
+\end{enumerate}
+
+\section{Problema 2}
+Realizando la expansión Taylor de la función $f(p)$, y por linealidad del conmutador se puede expandir la sumatoria
+	$$[x,f(p)] = \cancelto{0}{[x,f(0)]} + [x,f'(0)p] + \qty[x,\frac{1}{2} f''(0)p^2] + \cdots ,$$
+Dada la relación $[x,p] = i\hbar$ y se sigue cumpliendo la relación encontrada en la hoja 5. Entonces, la expansión anterior se escribe de la siguiente forma
+	$$
+			[x,f(p)] = i\hbar f'(0) + \frac{1}{2!} f''(0) (2p) (i\hbar) + \cdots = i\hbar \underbrace{\sum _{i = 1} ^\infty ip^{i - 1} \frac{f^{(i)} (0)}{i!}}_{\dv{f(p)}{p}}.
+	$$
+	Por lo tanto $[x,f(p)] = i\hbar \dv{f(p)}{p}$.
+\begin{enumerate}[a)]
+	\item Encontrando $[x,T_a]$, con $T_a = e^{\flatfrac{-iap}{\hbar}}$, con $p$ el operador de momentum. Utilizando la relación antes demostrada, dado que $T_a = f(p)$. Entonces, 
+	$$[x,T_a] = i\hbar \qty(\dv{p} e^{\flatfrac{-iap}{\hbar}}) = i\hbar \qty(\frac{-ia}{\hbar} e^{\flatfrac{-iap}{\hbar}}) = ae^{\flatfrac{-iap}{\hbar}} \boxed{ = aT_a .}$$
+	\item Para el valor esperado dada una traslación $T_a$, entonces $\bra{\psi} T_a ^\dagger XT_a \ket{\psi}$. Utilizanmos la siguiente expresión $T_a ^\dagger \underbrace{[X,T_a]}_{aT_a} = T_a ^\dagger XT_a - \underbrace{T_a ^\dagger T_a}_{I} X$, despejando y sustituyendo $T_a ^\dagger XT_a$, entonces
+	$$
+		\bra{\psi} T_a ^\dagger XT_a \ket{\psi} = \bra{\psi} T_a ^\dagger aT_a + X\ket{\psi} = a\braket{\psi} + \langle X \rangle = \boxed{\langle X \rangle + a.}
+	$$
+\end{enumerate}
+
+\section{Problema 3}
+\section{Problema 4}
+Tomando el término $\dv{t} \langle A \rangle = \dv{t} \bra{\psi} A \ket{\psi}$, entonces, se tiene
+	$$
+		\dv{t} \bra{\psi} A \ket{\psi} = \int \dd{^3 r} \pdv{\psi ^*}{t} A\psi + \int \dd{^3 r} \psi ^* A\pdv{\psi}{t} + \int \dd{^3 r} \psi ^* \pdv{A}{t} \psi ,
+	$$
+	entonces, sabiendo que el postulado de evolución temporal $i\hbar \pdv{\psi}{t} = H\psi$, entonces
+	$$
+		\dv{t} \expval{A}{\psi} = \frac{-1}{i\hbar} \bra{\psi} H^\dagger A \ket{\psi} + \frac{1}{i\hbar} \bra{\psi} AH \ket{\psi} + \Bigg\langle \pdv{A}{t} \Bigg\rangle ,
+	$$
+	como el hamiltoniano es un operador hermítico, entonces, reduciendo la expresión dada y sabiendo $[H,A] = HA - AH$
+	$$
+		\dv{t} \expval{A}	= \frac{i}{\hbar} \expval{[H,A]} + \Bigg\langle \pdv{A}{t} \Bigg\rangle
+	$$
+	$\hfill \square$
+\section{Problema 5}
+Utilizando el teorema de Ehrenfest para el hamiltoniano dado, encontramos las ecuaciones de movimiento. Encontrando primero $[H,x]$ y $[H,p]$, se tiene
+	$$
+		\mqty{[H,x] = \frac{1}{2} [p^2 ,x] + \frac{1}{2} m\omega _1 [x^2 ,x] + \frac{1}{2} m\omega _2 [x,x] + \frac{1}{2} mC[I,x] = -\frac{i\hbar p}{m} \\ [H,p] = \frac{1}{2} [p^2 ,p] + \frac{1}{2} m\omega _1 [x^2 ,p] + \frac{1}{2} m\omega _2 [x,p] + \frac{1}{2} mC[I,p] = m\omega _1 i\hbar x + \frac{1}{2} m\omega _2 i\hbar}	.
+	$$
+	Con esto, y sabiendo que $\dv{p}{t} = \dv{x}{t} = 0$, entonces, sustituyendo en el teorema de Ehrenfest
+	$$
+		\left\{ \mqty{ \displaystyle\dv{t} \expval{x} = \dfrac{1}{m} \expval{p} \\ \displaystyle\dv{t} \expval{p} = -m\omega _1 \expval{x} - \dfrac{1}{2} m\omega _2 } \right.	.
+	$$
+	Resolviendo las ecuaciones diferenciales, la solución la realizamos en mathematica. 
+
+\section{Problema 6}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%5

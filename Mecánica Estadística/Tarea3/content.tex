@@ -1,0 +1,138 @@
+\section{Problema 1}
+Para un volumen ($V$) dado y temperatura ($T$) constante, suponiendo las siguientes constantes: número de atomos $n = N_A N$ con $N$ número de moles. Con esto, la idea es encontrar la función de partición
+	$$\partition = \sum _{i = 1} ^k e^{-\beta E_i},$$
+donde $E_i = E (x,y,z,p_x,p_y,p_z)$ es lo que queremos encontrar, donde dicha energía representa la energía cinética, entonces
+	$$E(x,y,z,p_x,p_y,p_z) = \frac{p_x ^2 + p_y ^2 + p_z ^2}{2m}.$$
+Dado que estamos trabajando con variables continuas, la sumatoria pasa a ser una integral, entoncse se tiene
+	$$ \partition (\beta) = \frac{1}{h^3} \iiint _V \int_{-\infty} ^\infty \int_{-\infty} ^\infty \int_{-\infty} ^\infty \dd{^3 \vb{r}} \dd{p_x} \dd{p_y} \dd{p_z} e^{-\beta \qty(\frac{p_x ^2 + p_y ^2 + p_z ^2}{2m})} ,$$
+las integrales respecto a la posición representan el volumen; además, para cada una de las componentes del momentum se tiene una integral igual (con diferentes variables mudas), entonces, la función de partición queda como
+	$$\partition (\beta) = \frac{V}{h^3} \qty(\int_{-\infty} ^\infty \dd{p_x} e^{-\frac{\beta p_x ^2}{2m}})^3 .$$
+Para resolver la integral se utiliza una propiedad de la función gamma
+	$$\int_0 ^\infty \dd{\tau} \tau ^n e^{-a\tau ^k} = \frac{\Gamma (\frac{n + 1}{k})}{k a^{\frac{n+1}{k}}}.$$
+Dada dicha propiedad y que la integral anterior es de una función par, se encuentra cada una de las constantes en la propiedad y se reduce en
+	$$\int_{-\infty} ^\infty \dd{p_x} e^{-\frac{\beta p_x ^2}{2m}} = \sqrt{\frac{2m\pi}{\beta}}.$$
+Entonces, la función de partición es
+	$$\boxed{ \partition (\beta) = \frac{V}{h^3} \qty(\frac{2m\pi}{\beta})^{\flatfrac{3}{2}} }.$$
+
+\section{Problema 2}
+Desde la mecánica cuántica no podemos dar la posición y el momentum de una partícula. Las partículas obedecen la ecuación de schrodinger, dado que es un gas ideal $V(\vec{r}) = 0$, entonces
+	$$-\frac{\hbar ^2}{2m} \laplacian{\psi} = i\hbar \pdv{\psi}{t}. $$
+Los estados en el gas ideal los vamos a dar por su momentum.
+	$$ \braket{\vec{r}}{\vec{p}} = A e^{\frac{i}{\hbar} \qty(\vec{p} \cdot \vec{r} - Et)} $$
+	es la solución de la ecuación de schrodinguer, sustituímos en la ecuación 
+	$$E = \frac{p^2}{2m}.$$
+Dada la solución es claro que se forman ondas estacionarias cuyos estados están discretizados
+	$$p_{n_x} = \frac{n_x \hbar \pi}{L},$$
+	$$p_{n_y} = \frac{n_y \hbar \pi}{L},$$
+	$$p_{n_z} = \frac{n_z \hbar \pi}{L}.$$
+Entonces, calculando la función de partición $p^2 = \frac{\hbar ^2 \pi ^2}{L^2} (n_x ^2 + _y ^2 + n_z ^2)$
+	$$\partition (\beta) = \sum_{n_x = 0} ^\infty \sum_{n_y = 0} ^\infty \sum_{n_z = 0} ^\infty e^{-\frac{\beta \hbar ^2 \pi ^2}{2mL^3} (n_x ^2 + _y ^2 + n_z ^2)}.$$
+A pesar de estar discretizada, tomamos un espacio $(n_x,n_y,n_z)$, entonces $\dd{n_x} \dd{n_y} \dd{n_z} = n^2 \sin{\theta} \dd{n} \dd{\theta} \dd{\phi}$ con $n^2 = n_x ^2 + _y ^2 + n_z ^2$. Integrando en coordenadas esféricas
+	$$
+		\partition (\beta) = \int _0 ^\infty \dd{n} n^2 e^{-\frac{\beta \hbar ^2 \pi ^2 n^2}{2mL^2}} \int _0 ^\frac{\pi}{2} \dd{\phi} \int _0 ^\frac{\pi}{2} \sin{\theta} \dd{\theta},
+	$$
+utilizando la fórmula del problema anterior
+	$$\partition (\beta) = \frac{\pi ^{\flatfrac{3}{2}}}{8\qty(\frac{\beta \hbar ^2 \pi ^2}{2m V})^{\flatfrac{3}{2}}},$$
+	$$
+		\boxed{ \partition (\beta) = \frac{V}{\hbar ^3} \qty(\frac{m}{2\pi \beta})^{\flatfrac{3}{2}} . }	
+	$$
+
+\section{Problema 3}
+Para el valor esperado de la energía derivamos respecto a $\beta$ el $\ln{\partition}$
+	$$
+		\dv{\ln{\partition}}{\beta} = \dv{\beta} \qty(\ln{V} - 3\ln{\hbar} + \frac{3}{2} \ln{2m\pi} - \frac{3}{2} \ln{\beta}) = -\frac{3}{2\beta},	
+	$$
+entonces 
+	$$
+		\boxed{ \varepsilon = \frac{3}{2} k_B T .}
+	$$
+
+\section{Problema 4}
+En otras tareas se demostró que
+	$$S = k_B \beta \qty(\varepsilon + \frac{\ln{\partition}}{\beta}).$$
+Sustituyendo la función de partición
+	$$\boxed{ S = \frac{3}{2} k_B +k_B \ln{\qty(\frac{V}{h^3} \qty(\frac{2m\pi}{\beta})^{\flatfrac{3}{2}})} }$$
+
+\section{Problema 5}
+Partimos de la probabilidad definida por la función de partición
+	$$p_i = \frac{e^{-\frac{\beta}{E_i}}}{\partition} = f(p)$$
+donde ahora es una función de probabilidad. Integrando respecto a las tres componentes del momento se tiene que
+	$$\int _{-\infty} ^\infty \int _{-\infty} ^\infty \int _{-\infty} ^\infty \dd{p_x} \dd{p_y} \dd{p_z} f(p) = \frac{h^3}{V},$$
+a esto se llega utilizando las relaciones de los incisos anteriores. Pasando a coordenadas esféricas se tiene
+	$$
+		\int _0 ^\infty \int _0 ^{2\pi}	\int _0 ^\pi \dd{\theta} \dd{\phi} \dd{p} \sin{\theta} p^2 f(p) = \frac{h^3}{V},
+	$$
+realizando la integral se tiene
+	$$\int _0 ^\infty \dd{p} 4\pi p^2 \qty(\frac{\beta}{2\pi m})^{\flatfrac{3}{2}} e^{-\frac{\beta p^2}{2m}} = 1,$$
+	entonces la función de probabilidad es
+	$$
+		\boxed{ g(p) = \sqrt{\frac{2}{\pi}} \qty(\frac{\beta}{m})^{\flatfrac{3}{2}} p^2 e^{-\frac{\beta p^2}{2m}} }
+	$$
+
+\section{Problema 6}
+La moda es el punto máximo de la función de probabilidad
+	$$\dv{g(p)}{p} = \sqrt{\frac{2}{\pi}} \qty(\frac{\beta}{m})^{\flatfrac{3}{2}} \qty(2p - \frac{p^3 \beta}{m}) e^{-\frac{\beta p^2}{2m}} = 0, $$
+	de modo que la moda es 
+	$$\boxed{ p = \sqrt{\frac{2m}{\beta}}. }$$
+El valor esperado del momentum es
+	$$\int _0 ^\infty \dd{p} pg(p) = \frac{2m^2}{\beta ^2} $$
+utilizando la fórmula dada de la función gamma.
+	$$\boxed{ \expval{p} = 2k_B ^2 m^2 T^2 }$$
+
+\section{Problema 7}
+Para la velocidad se toma la distribución y un factor boltzmann, de modo que
+	$$f(v) \propto v^2 e^{-\frac{\beta mv^2}{2}},$$
+entonces, encontrando la constante de "normalización" para que la integral de la función sea 1, por lo tanto, la densidad de probabilidad es
+	$$\boxed{ f(v) = \sqrt{\frac{2}{\pi}} \qty(\beta m)^{\flatfrac{3}{2}} v^2 e^{-\frac{\beta mv^2}{2}} .}$$
+
+\section{Problema 8}
+Derivando para encontrar la moda
+	$$\dv{f(v)}{v} = 0 \quad \quad \quad \boxed{ v = \sqrt{\frac{2}{\beta m}}. }$$
+Ahora encontramos el valor esperado de la velocidad
+	$$\expval{v} = \int _0 ^\infty \dd{v} vf(v) \quad \quad \quad \boxed{ \expval{v} = \sqrt{\frac{8}{\pi \beta m}} }$$
+
+\section{Problema 9}
+Para la energía cinética tenemos
+	$$g(p)\dd{p} = \sqrt{\frac{2}{\pi}} \qty(\frac{\beta}{m})^{\flatfrac{3}{2}} p^2 e^{-\frac{\beta p^2}{2m}} \dd{p} = \sqrt{\frac{2}{\pi}} \qty(\frac{\beta}{m})^{\flatfrac{3}{2}} e^{-\beta K} \frac{m}{\sqrt{2mK}} 2mK \dd{K},$$
+simplificando, tenemos la función densidad
+	$$\boxed{ h(K) = \frac{2}{\sqrt{\pi}} \beta ^{\flatfrac{3}{2}} \sqrt{K} e^{-\beta K}. }$$
+
+\section{Problema 10}
+Encontramos la moda encontrando donde está el máximo de la función
+	$$\dv{h(K)}{K} = \frac{2}{\sqrt{\pi}} \beta ^{\flatfrac{3}{2}} \qty(\frac{1}{2\sqrt{K}} - \beta \sqrt{K}) e^{-\beta K} = 0, $$
+entonces
+	$$ \boxed{ K = \frac{\beta}{2}. } $$
+	
+Encontrando el valor esperado
+	$$
+		\expval{K} = \int _0 ^\infty \dd{K} Kh(K) = \frac{3}{2\beta}.
+	$$
+	$$ \boxed{ \expval{K} = \frac{3}{2} k_B T } $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%

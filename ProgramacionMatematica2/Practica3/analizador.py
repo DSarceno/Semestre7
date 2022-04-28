@@ -82,15 +82,15 @@ class File_writing:
             file.close()
         return
 
-
-
+# '-?\d\d([/]\d\d[/]\d\d(\B|\d\d)|[-]\d\d[-]\d\d)'
+# '-?\d+[/-]\d+[/-]\d+\.?\d*'
 class Analizador:
     def __init__(self):
-        self.fechas = '-?\d+[/-]\d+[/-]\d+\.?\d*'	# fechas, aceptadas en ambos formatos, guiones y slash.
+        self.fechas = '-?\d\d([/]\d\d[/]\d\d(\.?|\d\d$)|[-]\d\d[-]\d\d$)'	# fechas, aceptadas en ambos formatos, guiones y slash.
         self.enteros = '^\d+$'	# enteros.
         self.reales = '^\d+[.]\d+$'	# reales.
         self.cientificas = '^(\d+[.]\d+|\d+)[E]-?\d+$'	# notación científica aceptada con la "E"
-        self.complejos = '^(\d+[.]\d+|\d+)[+-](\d+[.]\d+|\d+)[i]$'	# números complejos en notación z = a + bi
+        self.complejos = '^(\d+[.]\d+([i]|[+-](\d+[.]\d+|\d+)[i])|\d+([i]|[+-](\d+[.]\d+|\d+)[i]))$'	# números complejos en notación z = a + bi
         self.palabras_clave = '(^|.)(Teorema|Matemática|Matemático|Hilbert|Turing|Análisis|Euler|Fermat|Pitágoras|Autómata|Boole|Cantor|Perelman|Experimentación|Físico|Física|Astronomía|Mecánica|Newton|Einstein|Galileo|Modelo|Tesla|Dinámica|Partículas)($|.)'	# Palabras clave a buscar relacionadas con física y matemática.
 
 
