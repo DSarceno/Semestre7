@@ -1,0 +1,46 @@
+\section{Problema 1}
+Dada la varianza $\langle (\Delta E)^2 \rangle = \langle (E_i - \varepsilon)^2 \rangle = \langle E_i ^2 \rangle - \varepsilon ^2$, entonces, encontramos el segundo momento
+\begin{equation}
+	 \dv[2]{\partition}{\beta} = \sum E_i ^2 e^{-\beta E_i} = \underbrace{\qty(\sum p_i E_i ^2)}_{\langle E_i ^2 \rangle} \partition .  \label{E2}
+\end{equation}
+Ahora, tomando la segunda derivada de $\ln{\partition}$, se tiene
+	$$ \dv[2]{\ln{\partition}}{\beta} = \dv{\beta} \qty(\frac{1}{\partition} \dv{\partition}{\beta}) = -\frac{1}{\partition ^2} \qty(\dv{\partition}{\beta})^2 + \frac{1}{\partition} \dv[2]{\partition}{\beta}, $$
+despejando y reemplazando en la fórmula de la varianza
+	$$ \langle (\Delta E)^2 \rangle = \dv[2]{\ln{\partition}}{\beta} + \frac{1}{\partition ^2} \qty(\dv{\partition}{\beta})^2 - \qty(-\frac{1}{\partition} \dv{\partition}{\beta})^2 $$
+	$$ \boxed{\langle (\Delta E)^2 \rangle = \dv[2]{\ln{\partition}}{\beta} .} $$
+
+\section{Problema 2}
+Dada la definición de tercer momento, se realiza la expación
+	\begin{equation}
+		\langle (\Delta E)^3 \rangle = \sum \underbrace{(E_i - \varepsilon)^3}_{E_i ^3 -3E_i ^2 \varepsilon + 3E_i \varepsilon ^2 - \varepsilon ^3} p_i = \langle E_i ^3 \rangle - 3\varepsilon \langle E_i ^2 \rangle + 3\varepsilon ^3 - \varepsilon ^3 = \langle E_i ^3 \rangle - 3\varepsilon \langle E_i ^2 \rangle + 2\varepsilon ^3. \label{3ermomento}
+	\end{equation}
+Ahora, siguiendo la idea del problema anterior
+	$$ -\frac{1}{\partition} \dv[3]{\partition}{\beta} = \langle E_i ^3 \rangle, $$
+entontrando la tercera derivada de $\ln{\partition}$,
+	\begin{equation}
+		\dv[3]{\ln{\partition}}{\beta} = \frac{2}{\partition ^3} \qty(\dv{\partition}{\beta})^3 - \frac{3}{\partition ^2} \qty(\dv{\partition}{\beta}) \dv[2]{\partition}{\beta} + \frac{1}{\partition} \dv[3]{\partition}{\beta}. \label{dv3ln}
+	\end{equation}
+
+Sustituyendo \eqref{E2}, \eqref{dv3ln} y $\varepsilon$ en \eqref{3ermomento}
+	$$ \langle (\Delta E)^3 \rangle = - \dv[3]{\ln{\partition}}{\beta} + \frac{2}{\partition ^3} \qty(\dv{\partition}{\beta})^3 - \frac{3}{\partition ^2} \qty(\dv{\partition}{\beta}) \dv[2]{\partition}{\beta} - 3\qty(-\frac{1}{\partition} \dv{\partition}{\beta}) \qty(\frac{1}{\partition} \dv[2]{\partition}{\beta}) + 2\qty(-\frac{1}{\partition} \dv{\partition}{\beta})^3, $$
+	$$ \boxed{\langle (\Delta E)^3 \rangle = - \dv[3]{\ln{\partition}}{\beta}.} $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%

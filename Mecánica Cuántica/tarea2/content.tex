@@ -6,15 +6,38 @@ Dado que la base $\{ \ket{\alpha _i} \}$ son kets propios de los observables $A$
 	Lo que demuestra que los observables $A$ y $B$ son compatibles.
 
 \section{Problema 2}
-
+Dada la transformada de fourier
+	$$ \overset{\sim}{\psi} (p) = \frac{1}{\sqrt{2\pi \hbar}} \int _{-\infty} ^\infty e^{-\frac{ixp}{\hbar}} \psi (x) \dd{x}. $$
+Derivando esa expresión respecto a $p$
+	\begin{equation}
+		\pdv{\overset{\sim}{\psi} (p)}{p} = \frac{1}{i\hbar} \frac{1}{\sqrt{2\pi \hbar}} \int _{-\infty} ^\infty e^{-\frac{ixp}{\hbar}} x\psi (x) \dd{x}. \label{psicolochop}
+	\end{equation}
+Ahora, tomando
+	\begin{equation}
+		\mel{p}{X}{\psi} = \int _{-\infty} ^\infty \braket{p}{x} \mel{x}{X}{\psi} = \frac{1}{\sqrt{2\pi \hbar}} \int _{-\infty} ^\infty e^{-\frac{ixp}{\hbar}} x\psi (x) \dd{x}. \label{sandwich}
+	\end{equation}
+Sustituyendo \eqref{sandwich} en \eqref{psicolochop}, se tiene
+	$$\boxed{i\hbar \pdv{\overset{\sim}{\psi} (p)}{p} = \mel{p}{X}{\psi}.}$$
 
 \section{Problema 3}
+Tomando
+	$$ \mel{p}{e^{-\frac{ia}{\hbar} X}}{\psi} = \int _{-\infty} ^\infty \braket{p}{x} \mel{p}{e^{-\frac{ia}{\hbar} X}}{\psi} = \underbrace{\int _{-\infty} ^\infty \frac{1}{\sqrt{2\pi \hbar}} e^{-\frac{ixp}{\hbar}} \psi (x + a) \dd{x}}_{\text{Transformada de Fourier } = \, \overset{\sim}{\psi} (p + a)}. $$
+	$$ \boxed{\mel{p}{e^{-\frac{ia}{\hbar} X}}{\psi} = \overset{\sim}{\psi} (p + a)} $$
 
 
 \section{Problema 4}
-
+Tomando el conmutador y la serie de taylor de la exponencial
+	$$e^{P^2} = \sum _n ^\infty \frac{P^{2n}}{n!},$$
+entonces, reemplazando en el conmutador dado
+	$$ [X,e^{P^2}] = \sum _n ^\infty \frac{1}{n!} [X,P^{2n}] = \sum _n ^\infty \frac{2n}{n!} (i\hbar) P^{2n - 1} = 2i\hbar P \sum _n ^\infty \frac{P^{2(n - 1)}}{(n - 1)!}, $$
+por lo que 
+	$$\boxed{ [X,e^{P^2}] = 2i\hbar P e^{P^2} }$$
 
 \section{Problema 5}
+Para el conmutador $[P,e^{X^2}]$, tomamos la misma idea del ejercicio pasado junto con la propiedad $[A,B] = -[B,A]$, entonces
+	$$ [P,e^{X^2}] = -\sum _n ^\infty \frac{1}{n!} [X^{2n} ,P] = -2i\hbar X \sum _n ^\infty \frac{X^{2(n - 1)}}{(n - 1)!}, $$
+de modo que
+	$$ \boxed{[P,e^{X^2}] = -2i\hbar Xe^{X^2}} $$
 
 
 \section{Problema 6}
