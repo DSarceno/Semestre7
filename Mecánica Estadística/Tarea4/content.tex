@@ -47,9 +47,24 @@ entonces
 	$$ \boxed{ P = k_B T \qty(\pdv{\ln{Z}}{V})_T = nk_B T \qty(\pdv{\ln{\partition}}{V})_T .} $$
 	
 
+\section{Problema 5}
+Sabiendo que
+	$$ \dv{\ln{\partition}}{\beta} = -\varepsilon, $$
+	$$ \dv[2]{\ln{\partition}}{\beta} = c_V k_B T^2. $$
+Dado el modelo de Einstein, la función de partición es de la forma
+	$$ \partition = \qty(\sum _{n = 0} ^\infty e^{-\hbar \omega (n + \flatfrac{1}{2})})^3, $$
+dada la serie geométrica calculamos la segunda derivada del logaritmo de la función de partición
+	$$ \partition = \qty(\frac{e^{-\frac{\beta \hbar \omega}{2}}}{1 - e^{-\beta \hbar \omega}})^3 \qquad \rightarrow \qquad \dv[2]{\ln{\partition}}{\beta} = \frac{3\hbar ^2 \omega ^2}{\qty(e^{\beta \hbar \omega} - 1)^2}, $$
+utilizando series de taylor y la aproximación $T \to \infty$, $\beta \to 0$, entonces
+	$$ \dv[2]{\ln{\partition}}{\beta} = \frac{3\hbar ^2 \omega ^2}{\beta ^2 \hbar ^2 \omega ^2}. $$
 
-
-
+Teniendo las relaciones del incio y lo encontrado se tiene
+	$$ c_V k_B T^2 = 3k_B ^2 T^2, $$
+Entonces $$ c_V = 3k_B = 4.1419\times 10^{-23} J/K. $$
+Capacidad calorífica molar
+	$$ \boxed{ C_V = c_V N_A = 24.94 \flatfrac{J}{K\cdot \text{mol}} } $$	
+Capacidad calorífica por kilogramo
+	$$ \boxed{ C_V = \flatfrac{c_V N_A}{0.055847 kg} = 446.577 \flatfrac{J}{K\cdot kg} } $$	 
 
 
 
