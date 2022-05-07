@@ -25,7 +25,27 @@ Sustituyendo \eqref{E2}, \eqref{dv3ln} y $\varepsilon$ en \eqref{3ermomento}
 	$$ \langle (\Delta E)^3 \rangle = - \dv[3]{\ln{\partition}}{\beta} + \frac{2}{\partition ^3} \qty(\dv{\partition}{\beta})^3 - \frac{3}{\partition ^2} \qty(\dv{\partition}{\beta}) \dv[2]{\partition}{\beta} - 3\qty(-\frac{1}{\partition} \dv{\partition}{\beta}) \qty(\frac{1}{\partition} \dv[2]{\partition}{\beta}) + 2\qty(-\frac{1}{\partition} \dv{\partition}{\beta})^3, $$
 	$$ \boxed{\langle (\Delta E)^3 \rangle = - \dv[3]{\ln{\partition}}{\beta}.} $$
 
-
+\section{Problema 3}
+Dada la definición de calor específico
+	$$c_V = \pdv{\varepsilon}{T},$$
+entonces, tomando la energía promedio	
+	$$ \varepsilon = - \pdv{\ln{\partition}}{\beta} = k_B T^2 \pdv{\ln{\partition}}{T}. $$
+	
+Reemplazando en la definición de calor específico
+	$$ c_V = \pdv{T} \qty(k_B T^2 \pdv{\ln{\partition}}{T}), $$
+	$$ \boxed{c_V = 2k_B T\pdv{\ln{\partition}}{T} + k_B T \pdv[2]{\ln{\partition}}{T}.} $$
+	
+	
+\section{Problema 4}
+Sabiendo que la presión la podemos escribir en términos de la energía libre de Helmholtz
+	$$ P = -\qty(\pdv{A}{V})_T, $$
+tomando a $A$ como 
+	$$ A = -\frac{\ln{Z}}{\beta}, \qquad Z = \partition ^n. $$
+Reemplazando $A$ en la presión, se tiene
+	$$ P = \qty(\ln{\partition} \cancelto{0}{\pdv{T}{V}} \pdv{T} \frac{1}{\beta} + \frac{1}{\beta} \pdv{\ln{Z}}{V})_T, $$
+entonces
+	$$ \boxed{ P = k_B T \qty(\pdv{\ln{Z}}{V})_T = nk_B T \qty(\pdv{\ln{\partition}}{V})_T .} $$
+	
 
 
 
