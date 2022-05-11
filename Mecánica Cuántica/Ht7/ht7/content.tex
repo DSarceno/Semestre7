@@ -1,0 +1,107 @@
+\section{Problema 1}
+Tomando $\Psi (x,t) = c_1 e^{-\frac{iE_1 t}{\hbar}} \psi _1 (x) + c_2 e^{-\frac{iE_2 t}{\hbar}} \psi _2 (x)$, para $t > 0$, entonces calculamos $\abs{\Psi (x,t)} ^2 = \Psi ^* (x,t) \Psi (x,t)$. Entonces 
+	$$ \abs{\Psi (x,t)} ^2 = \qty( c_1 e^{\frac{iE_1 t}{\hbar}} \psi ^* _1 (x) + c_2 e^{\frac{iE_2 t}{\hbar}} \psi ^* _2 (x) ) \qty( c_1 e^{-\frac{iE_1 t}{\hbar}} \psi _1 (x) + c_2 e^{-\frac{iE_2 t}{\hbar}} \psi _2 (x) )  $$
+	$$= c_1 ^2 \abs{\psi _1 (x)} ^2 + c_2 ^2 \abs{\psi _2 (x)}^2 + c_1 c_2 e^{-\frac{iE_1}{\hbar} (E_2 - E_1)} \psi ^* _1 (x) \psi _2 (x) + c_1 c_2 e^{-\frac{iE_2}{\hbar} (E_1 - E_2)} \psi _1 (x) \psi ^* _2 (x). $$
+	Cuya derivada es claramente distinta de cero, por lo que no es un estado estacionario.
+
+\section{Problema 2}
+Tomando $f(\alpha) = e^{\alpha A} B e^{\alpha A}$, expandimos en taylor alrededor de cero, de modo que la función será de la forma
+	$$ f(\alpha) = f(0) + \frac{\alpha}{1!} f'(0) + \frac{\alpha ^2}{2!} f''(0) + \frac{\alpha ^3}{3!} f'''(0) + \cdots . $$
+Con esto encontramos cada una de las derivadas valuadas en cero.
+	\begin{align*}
+		f'(\alpha) &= A\eu B\ed - \eu BA \ed \\
+		f'(0) &= AB - BA = \comm{A}{B}. \\
+		f''(\alpha) &= A^2 \eu B \ed - A\eu BA \ed - A\eu BA \ed + \eu BA^2 \ed, \\
+		f''(0) &= A^2 B - ABA - ABA + BA^2 = A\comm{A}{B} - \comm{A}{B} A = \comm{A}{\comm{A}{B}}. \\
+		f'''(\alpha) &= A^3 \eu B \ed - A^2 \eu BA \ed - A^2 \eu BA \ed + A\eu BA^2 \ed - A^2 \eu BA\ed \\
+		& \qquad \qquad \qquad \qquad + A\eu BA^2 \ed + A\eu BA^2 \ed - \eu BA^3 \ed , \\
+		f'''(0) &= A^3 B - A^2 BA - A^2 BA + ABA^2 - A^2 BA + ABA^2 + ABA^2 - BA^3 = A^2 \comm{A}{B} \\ 
+		& \qquad \qquad \qquad \qquad + \comm{A}{B} A^2 - A\comm{A}{B} A - A\comm{A}{B} A = A\comm{A}{\comm{A}{B}} - \comm{A}{\comm{A}{B}} A \\
+		f'''(0) &= \comm{A}{\comm{A}{\comm{A}{B}}}. \\
+		&\vdots
+	\end{align*}
+	Sustituyendo lo anterior en la expanción de Taylor 
+	$$ \boxed{ e^{\alpha A} B e^{\alpha A} = B + \alpha \comm{A}{B} + \frac{\alpha ^2}{2!} \comm{A}{\comm{A}{B}} + \frac{\alpha ^3}{3!} \comm{A}{\comm{A}{\comm{A}{B}}} + \cdots . } $$
+
+\section{Problema 3}
+Tomando lo demostrado anteriormente, se calculan los respectivos conmutadores.
+\begin{enumerate}[a)]
+	\item Tomando $\hat{A} = i\pauli{y}$ y $\hat{B} = \pauli{x}$, entonces, calculando cada conmutador
+		\begin{align}
+		\left.\begin{array}{ccc}
+			\comm{i\pauli{y}}{\pauli{x}} &=& -2i^2 \pauli{z} \\
+			\comm{i\pauli{y}}{\underbrace{\comm{i\pauli{y}}{\pauli{x}}}_{-2i^2 \pauli{z}}} &=& 2^2 i^4 \pauli{x} \\
+			\comm{i\pauli{y}}{\underbrace{\comm{i\pauli{y}}{\comm{i\pauli{y}}{\pauli{x}}}}_{2^2 i^4 \pauli{x}}} &=& 2^3 i^6 \pauli{z} .\\
+			&\vdots &
+		\end{array}\right.  \label{relaciones1}
+		\end{align}
+		Teninedo las relaciones de conmutacion \eqref{relaciones1}, entonces, agrupamos las que esten relacionadas con cada una de las matrices de pauli presentes; asimismo, simplificamos las potencias de $i$
+			$$ e^{i\alpha \pauli{y}} \pauli{x} e^{-i\alpha \pauli{y}} = \underbrace{\qty(1 - \frac{(2\alpha)^2}{2!} + \cdots)}_{\cos{2\alpha}} \pauli{x} + \underbrace{\qty((2\alpha) - \frac{(2\alpha)^3}{3!} + \cdots)}_{\sin{2\alpha}} \pauli{z} $$
+			$$ \boxed{ e^{i\alpha \pauli{y}} \pauli{x} e^{-i\alpha \pauli{y}} = \pauli{x} \cos{2\alpha} + \pauli{z} \sin{2\alpha}. } $$
+			
+			
+	\item Tomando $\hat{A} = i\pauli{z}$ y $\hat{B} = \pauli{x}$, entonces, calculando cada conmutador
+		\begin{align}
+		\left.\begin{array}{ccc}
+			\comm{i\pauli{z}}{\pauli{x}} &=& 2i^2 \pauli{y} \\
+			\comm{i\pauli{z}}{\underbrace{\comm{i\pauli{z}}{\pauli{x}}}_{2i^2 \pauli{y}}} &=& -2^2 i^4 \pauli{x} \\
+			\comm{i\pauli{z}}{\underbrace{\comm{i\pauli{z}}{\comm{i\pauli{z}}{\pauli{x}}}}_{-2^2 i^4 \pauli{x}}} &=& -2^3 i^6 \pauli{y} .\\
+			&\vdots &
+		\end{array}\right.  \label{relaciones2}
+		\end{align}
+		Teninedo las relaciones de conmutacion \eqref{relaciones2}, entonces, agrupamos las que esten relacionadas con cada una de las matrices de pauli presentes; asimismo, simplificamos las potencias de $i$
+			$$ e^{i\alpha \pauli{z}} \pauli{x} e^{-i\alpha \pauli{z}} = \underbrace{\qty(1 - \frac{(2\alpha)^2}{2!} + \cdots)}_{\cos{2\alpha}} \pauli{x} - \underbrace{\qty((2\alpha) - \frac{(2\alpha)^3}{3!} + \cdots)}_{\sin{2\alpha}} \pauli{y} $$
+			$$ \boxed{ e^{i\alpha \pauli{z}} \pauli{x} e^{-i\alpha \pauli{z}} = \pauli{x} \cos{2\alpha} - \pauli{y} \sin{2\alpha}. } $$
+			
+			
+	\item Tomando $\hat{A} = i\pauli{x}$ y $\hat{B} = \pauli{y}$, entonces, calculando cada conmutador
+		\begin{align}
+		\left.\begin{array}{ccc}
+			\comm{i\pauli{x}}{\pauli{y}} &=& 2i^2 \pauli{z} \\
+			\comm{i\pauli{x}}{\underbrace{\comm{i\pauli{x}}{\pauli{y}}}_{2i^2 \pauli{z}}} &=& -2^2 i^4 \pauli{y} \\
+			\comm{i\pauli{x}}{\underbrace{\comm{i\pauli{x}}{\comm{i\pauli{x}}{\pauli{y}}}}_{-2^2 i^4 \pauli{y}}} &=& -2^3 i^6 \pauli{z} .\\
+			&\vdots &
+		\end{array}\right.  \label{relaciones3}
+		\end{align}
+		Teninedo las relaciones de conmutacion \eqref{relaciones3}, entonces, agrupamos las que esten relacionadas con cada una de las matrices de pauli presentes; asimismo, simplificamos las potencias de $i$
+			$$ e^{i\alpha \pauli{x}} \pauli{y} e^{-i\alpha \pauli{x}} = \underbrace{\qty(1 - \frac{(2\alpha)^2}{2!} + \cdots)}_{\cos{2\alpha}} \pauli{y} - \underbrace{\qty((2\alpha) - \frac{(2\alpha)^3}{3!} + \cdots)}_{\sin{2\alpha}} \pauli{z} $$
+			$$ \boxed{ e^{i\alpha \pauli{x}} \pauli{y} e^{-i\alpha \pauli{x}} = \pauli{y} \cos{2\alpha} - \pauli{z} \sin{2\alpha}. } $$
+\end{enumerate}
+
+\section{Problema 4}
+Utilizando el teorema de Ehrenfest con el hamiltoniano $H = \frac{p_z ^2}{2m} - mgz$. Entonces
+	\begin{enumerate}[a)]
+		\item para $\dv{\expval{p_z}}{t}$
+			$$ \dv{\expval{p_z}}{t} = \frac{i}{\hbar} \expval{\comm{H}{p_z}} + \cancelto{0}{\expval{\pdv{p_z}{t}}}, $$
+		calculando el conmutador
+			$$ \comm{H}{p_z} = \frac{1}{2m} \comm{p_z ^2}{p_z} - mg\comm{z}{p_z} = -mgi\hbar I. $$
+		Reemplazando en la ecuación anterior, se tiene
+			$$ \boxed{\dv{\expval{p_z}}{t} = mg.} $$
+		Ahora, para el hamiltoniano
+			$$ \dv{\expval{H}}{t} = \frac{i}{\hbar} \expval{\cancelto{0}{\comm{H}{H}}} + \cancelto{0}{\expval{\pdv{H}{t}}}, $$
+			$$ \boxed{ \dv{\expval{H}}{t} = 0. } $$
+		\item Ahora, calculamos lo mismo para $z$ y resolvemos la ecuación con las condiciones iniciales siguientes: $\expval{z}(0) = h$ y $\expval{p_z} (0) = 0$. Ahora calculamos con el teorema de Ehrenfest
+			$$ \dv{\expval{z}}{t} = \frac{i}{\hbar} \expval{\comm{H}{z}} + \cancelto{0}{\pdv{z}{t}}, $$
+		el conmutador es
+			$$ [H,z] = \frac{1}{2m} \comm{p_z ^2}{z} - mg\comm{z}{z} = -\frac{i\hbar p_z}{m}. $$
+		Dado esto, el sistema de ecuaciones a resolver es
+			$$ \left\{ \mqty{ \dv{\expval{p_z}}{t} = mg \\ \dv{\expval{z}}{t} = \frac{1}{m} \expval{p_z} . } \right. $$
+		Realizando las integrales y valuando las condiciones inicales, las soluciones son
+			$$ \boxed{ \left\{ \mqty{ \expval{z} (t) =  h + \frac{1}{2} gt^2 \\ \expval{p_z} (t) = mgt.} \right. } $$
+	\end{enumerate}
+
+\section{Problema 5}
+\textbf{\textit{PDF mathematica.}}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%5
