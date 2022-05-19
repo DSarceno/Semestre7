@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ingreso de Datos</title>
+  </head>
+  <body>
+    <div style='text-align:center'>
+    <h1>Generador de AFD/AFND</h1>
+    <h5>Ingreso del Conjunto de Estados y la Función de Transición</h5>
+    <form action='' method='POST'>{% csrf_token %}
+      <table style="margin: 0 auto;">
+        {{form.as_table}}
+      </table>
+      <input type = 'submit' value = 'Send'>
+    </form>
+    </div>
+  </body>
+</html>

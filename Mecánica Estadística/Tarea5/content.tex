@@ -6,11 +6,98 @@ Teniendo la tarea anterior, se sabe que
 Entonces, tomando la energía libre de Gibbs $G = A + PV$, sustituímos
 	$$ G = -\frac{\ln{Z}}{\beta} + \frac{V}{\beta} \qty(\pdv{\ln{Z}}{V})_T,$$
 	$$ \boxed{ G = k_B T \qty(-\ln{Z} + \qty(\pdv{\ln{Z}}{V})_T) } $$
+	
+	
 \section{Problema 2}
+Tomando las funciones importantes, tales como, la energía libre del Helmholtz, la energía, la Entalpía y la función de Gibbs. Tomando el diferencial exacto de la función de Gibbs, se tiene
+	$$ \dd{G} = - S\dd{T} + V\dd{p} = \underbrace{\qty(\pdv{G}{T})_p}_{-S} \dd{T} + \underbrace{\qty(\pdv{G}{p})_T}_{V} \dd{p} ; $$
+además, dado que $\dd{G}$ es un diferencial exacto, las segundas derivadas cruzadas de $G$ son continuas, por ende
+	$$ \pdv[2]{G}{T}{p} = \pdv[2]{G}{p}{T}. $$
+Reemplazando se tiene
+	$$ \boxed{ \qty(\pdv{V}{T})_p = -\qty(\pdv{S}{p})_T .} $$
+Con esta misma idea se encuentran las otras tres relacionesde Maxwell. Entonces, solo se planteará el diferencial y se dará la relación asociada.\\
+
+Para la Energía libre de Helmholtz, se tiene el diferencial
+	$$ \dd{A} = -S\dd{T} - p\dd{V} = \qty(\pdv{A}{T})_V \dd{T} + \qty(\pdv{A}{V})_T \dd{V}, $$
+entonces, sabiendo lo de las derivadas cruzadas, se tiene
+	$$ \boxed{ \qty(\pdv{S}{V})_T = \qty(\pdv{p}{T})_V . } $$
+Para la energía
+	$$ \dd{E} = T\dd{S} - p\dd{V} = \qty(\pdv{E}{S})_V \dd{S} + \qty(\pdv{E}{V})_S \dd{V},  $$
+	
+entonces
+	$$ \boxed{ \qty(\pdv{T}{V})_S = -\qty(\pdv{p}{S})_V . } $$
+
+Para la entalpía
+	$$ \dd{H} = T\dd{S} + V\dd{p} = \qty(\pdv{H}{S})_p \dd{S} + \qty(\pdv{H}{p})_S \dd{p}, $$
+entonces
+	$$ \boxed{ \qty(\pdv{T}{p})_S = \qty(\pdv{V}{S})_p . } $$
+
 \section{Problema 3}
+En la tarea anterior se encontró, mediante el modelo de Einstein, el calor específico, entonces
+	$$ c_V = 3k_B, $$
+por lo que, la capacidad calorífica es
+	$$ \boxed{ C_V = 3N_A k_B = 24.94 \flatfrac{J}{K\cdot mol}. } $$
+
 \section{Problema 4}
+Desde la mecánica cuántica no podemos dar la posición y el momentum de una partícula. Las partículas obedecen la ecuación de schrodinger, dado que es un gas ideal $V(\vec{r}) = 0$, entonces
+	$$-\frac{\hbar ^2}{2m} \laplacian{\psi} = i\hbar \pdv{\psi}{t}. $$
+Los estados en el gas ideal los vamos a dar por su momentum.
+	$$ \braket{\vec{r}}{\vec{p}} = A e^{\frac{i}{\hbar} \qty(\vec{p} \cdot \vec{r} - Et)} $$
+	es la solución de la ecuación de schrodinguer, sustituímos en la ecuación 
+	$$E = \frac{p^2}{2m}.$$
+Dada la solución es claro que se forman ondas estacionarias cuyos estados están discretizados
+	$$p_{n_x} = \frac{n_x \hbar \pi}{L},$$
+	$$p_{n_y} = \frac{n_y \hbar \pi}{L},$$
+	$$p_{n_z} = \frac{n_z \hbar \pi}{L}.$$
+Entonces, calculando la función de partición $p^2 = \frac{\hbar ^2 \pi ^2}{L^2} (n_x ^2 + _y ^2 + n_z ^2)$
+	$$\partition (\beta) = \sum_{n_x = 0} ^\infty \sum_{n_y = 0} ^\infty \sum_{n_z = 0} ^\infty e^{-\frac{\beta \hbar ^2 \pi ^2}{2mL^3} (n_x ^2 + _y ^2 + n_z ^2)}.$$
+A pesar de estar discretizada, tomamos un espacio $(n_x,n_y,n_z)$, entonces $\dd{n_x} \dd{n_y} \dd{n_z} = n^2 \sin{\theta} \dd{n} \dd{\theta} \dd{\phi}$ con $n^2 = n_x ^2 + _y ^2 + n_z ^2$. Integrando en coordenadas esféricas
+	$$
+		\partition (\beta) = \int _0 ^\infty \dd{n} n^2 e^{-\frac{\beta \hbar ^2 \pi ^2 n^2}{2mL^2}} \int _0 ^\frac{\pi}{2} \dd{\phi} \int _0 ^\frac{\pi}{2} \sin{\theta} \dd{\theta},
+	$$
+utilizando la siguiente propiedad de la función gamma
+	$$\int_0 ^\infty \dd{\tau} \tau ^n e^{-a\tau ^k} = \frac{\Gamma (\frac{n + 1}{k})}{k a^{\frac{n+1}{k}}}.$$
+Dado esto, se tiene
+	$$\partition (\beta) = \frac{\pi ^{\flatfrac{3}{2}}}{8\qty(\frac{\beta \hbar ^2 \pi ^2}{2m V})^{\flatfrac{3}{2}}},$$
+	$$
+		\partition (\beta) = \frac{V}{\hbar ^3} \qty(\frac{m}{2\pi \beta})^{\flatfrac{3}{2}} .	
+	$$
+Dada la integral del problema, es claro que la función $g(E) = \laplace ^{-1} \{ \partition (\beta) \}$, usando mathematica:\\ \texttt{InverseLaplaceTransform[$F(s),s,t$]}, entonces, la función $g(E)$ es
+	$$ \boxed{ g(E) = \frac{2V}{\hbar ^3} \sqrt{\frac{E}{\pi}} \qty(\frac{m}{2\pi})^{\flatfrac{3}{2}} .} $$
+
 \section{Problema 5}
- 
+Para un gas diatómico tenemos diferentes tipos de movimiento, el traslacional, rotacional y vibracional. La función de partición general la describimos de la siguiente forma
+	$$ \partition (\beta) = \partition _T (\beta) \partition _R (\beta) \partition _V (\beta). $$
+La función de partición traslacional ya se calculó en tareas anteriores, cuyo resultado es
+	$$ \partition _T (\beta) = \frac{V}{\hbar ^3} \qty(\frac{m}{2\beta \pi})^{\flatfrac{3}{2}}. $$
+
+Ahora, para la función de partición rotacional se tienen los dos índices $(l,m)$. Entonces
+	$$ \partition _R (\beta) = \sum _{l = \infty} ^\infty \sum _{m = -l} ^l e^{-\beta E_{l,m}}, $$
+pero sabemos que $L^2 \ket{l,m} = \hbar ^2 l(l + 1)$. Tomamos la energía cinética de rotación $\frac{1}{2} I\omega ^2$ y $L = I\omega$. Entonces, la energía es $E_{l,m} = \frac{\hbar ^2}{2I} l(l + 1)$, entonces 
+	$$ \partition _R (\beta) = \sum _{l = 0} ^\infty \sum _{m = -l} ^l e^{-\frac{\beta \hbar ^2}{2I} l(l + 1)} = \sum _{l = 0} ^\infty (2l + 1) e^{-\frac{\beta \hbar ^2}{2I} l(l + 1)} = \int _0 ^\infty \dd{l} (2l + 1) e^{-\frac{\beta \hbar ^2}{2I} l(l + 1)}, $$
+resolviendo la integral
+	$$ \partition _R (\beta) = \frac{2I}{\hbar ^2 \beta}. $$
+	
+Ahora para la función de partición vibracional, tenemos
+	$$ \partition _V (\beta) = \sum _{n = 0} ^\infty e^{-\beta E_n}, $$
+con $E_n = \hbar \omega (n + \frac{1}{2})$, entonces
+	$$ \partition _V (\beta) = \sum _{n = 0} ^\infty e^{-\beta \hbar \omega (n + \flatfrac{1}{2})} = \frac{e^{-\frac{\beta \hbar \omega}{2}}}{1 - e^{-\beta \hbar \omega}} = \frac{2}{\sinh{\frac{\beta \hbar \omega}{2}}}. $$
+Tomando la aproximación para $\beta \to 0$, se tiene
+	$$ \partition _V (\beta) = \frac{1}{\beta \hbar \omega}. $$
+Multiplicando las soluciones
+	$$ \boxed{ \partition (\beta) =  \qty[\frac{V}{\hbar ^3} \qty(\frac{m}{2\beta \pi})^{\flatfrac{3}{2}}] \qty[\frac{2I}{\hbar ^2 \beta}] \qty[\frac{1}{\beta \hbar \omega}]. } $$
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
