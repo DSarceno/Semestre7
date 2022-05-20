@@ -1,0 +1,18 @@
+Link para el código en \href{https://github.com/DSarceno/Semestre7/tree/main/ProgramacionMatematica2/Final}{GitHub}. El link al \href{https://youtu.be/9M0k9_siBo0}{video}. \\
+
+La gramatica que describe las expresiones regulares es de la siguiente forma ($C$ representa un carácter)
+$$
+	\left.\begin{array}{ccc}
+		Exp & \to & Term \\
+		& & Term \quad | \quad Exp \\
+		Term & \to & Factor \\
+		& & Factor \quad | \quad Term \\
+		Factor & \to & Trans \\
+		Trans & \to & C \\
+		& & ( \quad Exp \quad )
+		
+		
+	\end{array}\right.
+$$
+
+Ahí se representan los posibles bucles y dado que $C$ es un caracter, puede ser un dígito o alguna operacion.
